@@ -1,0 +1,15 @@
+{
+    "validCustomer": {
+        "email": "whaterver@gmail.com",
+        "password": "fasdf1423"
+    },
+    "invalidCustomer": {
+        "email": "invalidCustomer@gmail.com",
+        "password": "fasdf1423"
+    },
+    "invalidPassword": {
+        "email": "whaterver@gmail.com",
+        "password": "fsdf1423"
+    }
+
+}

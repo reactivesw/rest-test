@@ -1,0 +1,8 @@
+{"version":0,
+  "actions":[
+    {
+      "action": "setSlug",
+      "slug":"updated-category-slug"
+    }
+  ]
+}

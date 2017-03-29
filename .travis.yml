@@ -1,0 +1,12 @@
+sudo: required
+language: java
+jdk: oraclejdk8
+
+script:
+  - gradle clean
+  - gradle wrapper
+  - ./gradlew clean test --info
+
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)

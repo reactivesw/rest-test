@@ -1,0 +1,18 @@
+{
+  "duplicateSignUp": {
+    "password": "p!6BN9MOxn",
+    "email": "sirerfswfa@cdafasfa.com"
+  },
+  "passwordWithoutDigitSignUp": {
+    "password": "zxcvbncvb",
+    "email": "fsdfadfawefawef@gmalf.com"
+  },
+  "passwordWithoutLowerCaseSignUp": {
+    "password": "ZXCVBN67",
+    "email": "fdsfaefa@gmail.com"
+  },
+  "invalidEmail": {
+    "password": "asdf423asfas",
+    "email": "fadfawefawgwa"
+  }
+}

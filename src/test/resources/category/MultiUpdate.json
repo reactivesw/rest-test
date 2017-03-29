@@ -1,0 +1,14 @@
+{"version":2,
+  "actions":[
+    {
+      "action": "setName",
+      "name":{
+        "en": "Pro T-Shirt"
+      }
+    },
+    {
+      "action": "setSlug",
+      "slug":"f9779820-b282-4f62-8489-0d5ff1415a98"
+    }
+  ]
+}
