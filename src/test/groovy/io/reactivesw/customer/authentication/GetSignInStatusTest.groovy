@@ -6,7 +6,7 @@ import io.reactivesw.util.RestClientFactory
 import spock.lang.Specification
 
 /**
- * Created by samray on 3/28/17.
+ * Test get sign in api
  */
 class GetSignInStatusTest extends Specification {
     def client = RestClientFactory.getClient(CustomerAuthenticationConfig.ROOTURL)

@@ -6,7 +6,7 @@ import io.reactivesw.util.RestClientFactory
 import spock.lang.Specification
 
 /**
- * Created by samray on 3/28/17.
+ * Test sign in api
  */
 class SignInTest extends Specification {
     def client = RestClientFactory.getJsonClient(CustomerAuthenticationConfig.ROOTURL)

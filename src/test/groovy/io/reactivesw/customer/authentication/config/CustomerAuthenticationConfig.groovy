@@ -3,7 +3,7 @@ package io.reactivesw.customer.authentication.config
 import io.reactivesw.config.GlobalConfig
 
 /**
- * Created by samray on 3/28/17.
+ * the configuration for customer authentication test
  */
 class CustomerAuthenticationConfig{
 

@@ -7,7 +7,7 @@ import io.reactivesw.util.RestClientFactory
 import spock.lang.Specification
 
 /**
- * Created by samray on 3/28/17.
+ * Test sign up api
  */
 class SignUpTest extends Specification {
 

@@ -5,7 +5,7 @@ import io.reactivesw.util.RestClientFactory
 import spock.lang.Specification
 
 /**
- * Created by samray on 3/28/17.
+ * Test get anonymous token api
  */
 class GetAnonymousTokenTest extends Specification{
     def "test1: get anonymous token test should return a token and response status should be 200"(){
