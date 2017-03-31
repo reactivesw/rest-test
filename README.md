@@ -1,9 +1,14 @@
 # Rest Test
 This repo is for microservice REST API testing
 ## How to run test
-Taking security into account,so we have avoid writing all sensitive information into configuration
+Taking security into account,so we have avoid writing all sensitive information into configuration file
 and get it from environment variable.In this case,if you want to run  test,you have to 
-set the environment variable `TEST_SERVER` first.In this project , our build tool is gradle,so if you want to run test,
+set the environment variable `TEST_SERVER` first.
+for Linux/Unix ,you could run the below command in terminal or put it in `.bashrc`
+```
+export TEST_SERVER="your test server ip"
+```
+In this project , our build tool is gradle,so if you want to run test,
 you have to install `gradle` first.For OS X,you can just install gradle via homebrew
 ```
 brew install gradle
