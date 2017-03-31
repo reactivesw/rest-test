@@ -5,12 +5,13 @@ Taking security into account,so we have avoid writing all sensitive information 
 and get it from environment variable.In this case,if you want to run  test,you have to 
 set the environment variable `TEST_SERVER` first.In this project , our build tool is gradle,so if you want to run test,
 you have to install `gradle` first.For OS X,you can just install gradle via homebrew
-`brew install gradle
-`
+```
+brew install gradle
+```
 and then run test:
-`
+```
 gradle test
-`
+```
 ## Test Case
 A test case should contains the following properties
 1. description: The description of test case,because of feature provided by spock ,so you can write your description into your function name 
@@ -57,7 +58,8 @@ Then,in the document,you could find :
 1. Url of the target api
 2. required parameter
 3. http method (GET,PUT,DELETE,PUT,POST)
-4. response
+4. response result
+
 According to the given method,you are able to write you own restful api test which should be:
 1. test different situation of one method
 2. provide some specific arguments to that method
