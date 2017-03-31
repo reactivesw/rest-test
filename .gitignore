@@ -60,6 +60,7 @@ out
 *.ipr
 *.iws
 *.iml
+*.tern-port
 atlassian-ide-plugin.xml
 
 # Eclipse specific files/directories

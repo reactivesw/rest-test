@@ -9,14 +9,15 @@ import spock.lang.Specification
  * Test sign in api
  */
 class SignInTest extends Specification {
-    def client = RestClientFactory.getJsonClient(CustomerAuthenticationConfig.ROOTURL)
+    def client = RestClientFactory.getClient(CustomerAuthenticationConfig.ROOTURL)
 
-    def "test 1: sign in with email and password should return customerView and the status of response should be 200"() {
+    def "test1: sign in with email and password should return customerView and the status of response should be 200"() {
         given: "prepare data that customer needs to sign in"
         def signinInformation = CustomerAuthenticationDataFactory.getSignin().validCustomer
+        println CustomerAuthenticationConfig.ROOTURL
 
         when: "call signin api to sign in"
-        def response = client.post(path: "signin", body: signinInformation)
+        def response = client.post(path: "signin", body: signinInformation, requestContentType: "application/json")
 
         then: "response status should be 200,and email should be equal to given signinInformation"
         with(response) {
@@ -31,7 +32,7 @@ class SignInTest extends Specification {
         def invalidCustomer = CustomerAuthenticationDataFactory.getSignin().invalidCustomer
 
         when: "call signin api to sign in"
-        def response = client.post(path: "signin", body: invalidCustomer)
+        def response = client.post(path: "signin", body: invalidCustomer, requestContentType: "application/json")
 
         then: "response status should be 404,and error code should be 10001"
         response == 404
@@ -42,7 +43,7 @@ class SignInTest extends Specification {
         def invalidPassword = CustomerAuthenticationDataFactory.getSignin().invalidPassword
 
         when: "call signin api to sign in"
-        def response = client.post(path: "signin", body: invalidPassword)
+        def response = client.post(path: "signin", body: invalidPassword, requestContentType: "application/json")
 
         then: "response status should be 401"
         response == 401
