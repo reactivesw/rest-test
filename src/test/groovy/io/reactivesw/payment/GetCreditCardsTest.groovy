@@ -18,24 +18,30 @@ class GetCreditCardsTest extends Specification {
 
     def setupSpec() {
         def signinInformation = CustomerAuthenticationDataFactory.getSignin().validCustomer
-        def client = RestClientFactory.getClient(PaymentConfig.ROOTURL)
         def signInClient = RestClientFactory.getClient(CustomerAuthenticationConfig.ROOTURL)
         def response = signInClient.post(path: "signin", body: signinInformation, requestContentType: "application/json")
         customerId = response.data.customerView.id
     }
 
-    def "test1: get all credit cards by customer id ,should return all credit informat,status of response should be 200"() {
+    def "Test1: get all credit cards by customer id, should return all credit information, status of response should be 200 ok"() {
         given: "prepare data"
-        def creditCardsPath = "credit-cards" + "/" + customerId
-        def path = [path: creditCardsPath]
+        def client = RestClientFactory.getClient(PaymentConfig.ROOTURL)
+        def requestParam = [customerId: customerId]
 
         when: "get credit card by calling api"
-        def response = client.get(path)
+        def response = client.get(path: "credit-cards", query: requestParam)
 
-        then: "status of response should be 200,and customer id in response should be equal to given customer id "
+        then: "status of response should be 200, and if credit card exists, customer id in credit card view should be equal given customer id"
         with(response) {
             status == 200
         }
+        if (response.data.creditCardView) {
+            response.data.creditCardView[0].id == customerId
+        }
+    }
+
+    def "Test2: get credit cards with invalid customer id"() {
+
     }
 
     def cleanupSpec() {

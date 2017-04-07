@@ -11,7 +11,7 @@ import spock.lang.Specification
 class GetSignInStatusTest extends Specification {
     def client = RestClientFactory.getClient(CustomerAuthenticationConfig.ROOTURL)
 
-    def "test1: get sign in status with token,should return customer id"() {
+    def "Test1: get sign in status with token, should return customer id and 200 ok"() {
         given: "prepare data"
         def validCustomer = CustomerAuthenticationDataFactory.getSignin().validCustomer
         def res = client.post(path: "signin", body: validCustomer, requestContentType: "application/json")
@@ -27,7 +27,7 @@ class GetSignInStatusTest extends Specification {
         }
     }
 
-    def "test2: get sign in status with invalid token,response status should be 400"() {
+    def "Test2: get sign in status with invalid token, response status should be 400 bad request"() {
         given: "prepare data"
         def invalidToken = "invalid_token"
         def token = ['token': invalidToken]
@@ -39,7 +39,7 @@ class GetSignInStatusTest extends Specification {
         response == 401
     }
 
-    def "test3: get sign in status with anonymous token,response status should return 200"() {
+    def "Test3: get sign in status with anonymous token, response status should return 200 ok"() {
         given: "prepare anonymous token"
         def res = client.get(path: "anonymous")
         def anonymousToken = ['token': res.data.str]

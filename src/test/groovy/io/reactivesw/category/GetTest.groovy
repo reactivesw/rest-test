@@ -19,21 +19,21 @@ class GetTest extends Specification {
     @Shared
     def category
     @Shared
-    def primerEndpoint
+    def client
     @Shared
     CleanupMap cleanupMap = new CleanupMap()
 
     def setupSpec() {
         category = CategoryDataFactory.getCategory().validCategory1
-        primerEndpoint = RestClientFactory.getJsonClient(CategoryConfig.rootURL)
-        def response = primerEndpoint.post(body: category)
+        client = RestClientFactory.getJsonClient(CategoryConfig.rootURL)
+        def response = client.post(body: category)
         id = response.data.id
         cleanupMap.addObject(response.data.id, response.data.version)
     }
 
-    def "test 1 : get category by id"() {
+    def "Test1 : get category by id and should return 200 ok"() {
         when: "call api to get category with id"
-        def response = primerEndpoint.get(path: id)
+        def response = client.get(path: id)
 
         then: "success, return 200 and new category equal to given category"
         response.status == 200
@@ -41,21 +41,21 @@ class GetTest extends Specification {
         category.slug == response.data.slug
     }
 
-    def "test 2 : get all category with root url"() {
+    def "Test2 : get all category with root url and should return 200 ok"() {
         when: "call api to get all category"
-        def response = primerEndpoint.get(path: null)
+        def response = client.get(path: null)
 
         then: "return 200, and result count should be more than 1"
         response.status == 200
         response.data.count >= 1
     }
 
-    def "test 3 : get category with not exist id"() {
+    def "Test3 : get category with not exist id and should return 404 not found"() {
         given: "prepare a not exist id"
         def wrongId = "this is a wrong id"
 
         when: "call api to get category with id"
-        def response = primerEndpoint.get(path: wrongId)
+        def response = client.get(path: wrongId)
 
         then: "fail and return 404"
         response == 404

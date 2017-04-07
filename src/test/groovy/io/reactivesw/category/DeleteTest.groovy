@@ -26,7 +26,7 @@ class DeleteTest extends Specification {
         version = response.data.version
     }
 
-    def "test 1 : delete category with id and version, should return 200 and success"() {
+    def "Test1 : delete category with id and version, should return 200 and success"() {
         given: "prepare data"
         primerEndpoint = RestClientFactory.getClient(CategoryConfig.rootURL)
         def version = ['version': version]
@@ -38,7 +38,7 @@ class DeleteTest extends Specification {
         response.status == 200
     }
 
-    def "test 2 : delete category with not exist id, would fail and return 404"() {
+    def "Test2 : delete category with not exist id, would fail and return 404 not found"() {
         given: "prepare data"
         primerEndpoint = RestClientFactory.getClient(CategoryConfig.rootURL)
         def wrongId = "this is a wrong id"

@@ -11,7 +11,7 @@ import spock.lang.Specification
 class SignInTest extends Specification {
     def client = RestClientFactory.getClient(CustomerAuthenticationConfig.ROOTURL)
 
-    def "test1: sign in with email and password should return customerView and the status of response should be 200"() {
+    def "Test1: sign in with email and password should return customerView and the status of response should be 200 ok"() {
         given: "prepare data that customer needs to sign in"
         def signinInformation = CustomerAuthenticationDataFactory.getSignin().validCustomer
 
@@ -26,7 +26,7 @@ class SignInTest extends Specification {
 
     }
 
-    def "test 2: sign in with customer that haven't sign up,response status should return 404"() {
+    def "Test2: sign in with customer that haven't sign up, response status should return 404 not found"() {
         given: "prepare the invalid data"
         def invalidCustomer = CustomerAuthenticationDataFactory.getSignin().invalidCustomer
 
@@ -37,7 +37,7 @@ class SignInTest extends Specification {
         response == 404
     }
 
-    def "test3: sign in with wrong password,response should be 401 "() {
+    def "Test3: sign in with wrong password, response should be 401 unauthorized"() {
         given: "prepare the email and wrong password"
         def invalidPassword = CustomerAuthenticationDataFactory.getSignin().invalidPassword
 

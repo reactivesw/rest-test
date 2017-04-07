@@ -1,6 +1,5 @@
 package io.reactivesw.customer.authentication
 
-import io.reactivesw.config.GlobalConfig
 import io.reactivesw.customer.authentication.config.CustomerAuthenticationConfig
 import io.reactivesw.util.CustomerAuthenticationDataFactory
 import io.reactivesw.util.RestClientFactory
@@ -13,7 +12,7 @@ class SignUpTest extends Specification {
 
     def client = RestClientFactory.getClient(CustomerAuthenticationConfig.ROOTURL)
 
-    def "test 1: sign up with email and password,response status should be 200"() {
+    def "Test1: sign up with email and password, response status should be 200 ok"() {
         given: "prepare signup data"
         def email = UUID.randomUUID().toString().replaceAll("-", "") + "@" + "gmail.com"
         def password = "p!6BN9MOxn"
@@ -28,7 +27,7 @@ class SignUpTest extends Specification {
         }
     }
 
-    def "test2: sign up with the same email again,the status of response should return 409"() {
+    def "Test2: sign up with the same email again, the status of response should return 409 conflict"() {
         given: "prepare signup data that has been used"
         def duplicateSignUp = CustomerAuthenticationDataFactory.getSignup().duplicateSignUp
 
@@ -39,7 +38,7 @@ class SignUpTest extends Specification {
         response == 409
     }
 
-    def "test3: sign up with password which is not digit,the status of response should return 400"() {
+    def "Test3: sign up with password which is not digit, the status of response should return 400 bad request"() {
         given: "prepare signup data with invalid password"
         def passwordWithoutDigitSignUp = CustomerAuthenticationDataFactory.getSignup().passwordWithoutDigitSignUp
 
@@ -50,7 +49,7 @@ class SignUpTest extends Specification {
         response == 400
     }
 
-    def "test4: sign up with password which is all upper case,the status of response should return 400"() {
+    def "Test4: sign up with password which is all upper case, the status of response should return 400 bad request"() {
         given: "prepare signup data with invalid password"
         def passwordWithoutLowerCaseSignUp = CustomerAuthenticationDataFactory.getSignup().passwordWithoutLowerCaseSignUp
 
@@ -61,7 +60,7 @@ class SignUpTest extends Specification {
         response == 400
     }
 
-    def "test5: sign up with invalid email address,the status of response should return 400"() {
+    def "Test5: sign up with invalid email address, the status of response should return 400 bad request"() {
         given: "prepare signup data with invalid email"
         def invalidEmail = CustomerAuthenticationDataFactory.getSignup().invalidEmail
 

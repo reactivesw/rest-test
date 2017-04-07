@@ -17,7 +17,7 @@ class CreateTest extends Specification {
 
     def client = RestClientFactory.getJsonClient(CategoryConfig.rootURL)
 
-    def "test 1 : create category with name and slug, should return 200 and new category"() {
+    def "Test1 : create category with name and slug, should return 200 ok and new category"() {
         given: "prepare category data"
         def category = CategoryDataFactory.getCategory().validCategory1
 
@@ -31,7 +31,7 @@ class CreateTest extends Specification {
         cleanupMap.addObject(response.data.id, response.data.version)
     }
 
-    def "test 2 : create category with all parmas, should return 200 and new category"() {
+    def "Test2 : create category with all parameter, should return 200 ok and new category"() {
         given: "prepare category data"
         def category = CategoryDataFactory.getCategoryWithAllParams()
 
@@ -53,7 +53,7 @@ class CreateTest extends Specification {
         cleanupMap.addObject(response.data.id, response.data.version)
     }
 
-    def "test3: create category with invalid char in slug,should return 400"() {
+    def "Test3: create category with invalid char in slug, should return 400 bad request"() {
         given: "prepare category data that include invalid char in slug"
         def includeInvalidCharCategory = CategoryDataFactory.getCategory().includeInvalidCharCategory
 
@@ -64,7 +64,7 @@ class CreateTest extends Specification {
         response == 400
     }
 
-    def "test4: create category with 1-char length(less than minimum size) slug,should return 400"() {
+    def "Test4: create category with 1-char length(less than minimum size) slug, should return 400 bad request"() {
         given: "prepare category data including 1-char length slug"
         def lessThanMinimumSizeCategory = CategoryDataFactory.getCategory().lessThanMinimumSizeCategory
 
@@ -75,7 +75,7 @@ class CreateTest extends Specification {
         response == 400
     }
 
-    def "test5: create category with 277-char length(great than maximum size) slug,should return 400"() {
+    def "Test5: create category with 277-char length(great than maximum size) slug, should return 400 bad request"() {
         given: "prepare category data including 277-char length slug"
         def greatThanMaximumSizeCategory = CategoryDataFactory.getCategory().greatThanMaximumSizeCategory
 
@@ -86,7 +86,7 @@ class CreateTest extends Specification {
         response == 400
     }
 
-    def "test6: create category without slug,should return 400 bad request"() {
+    def "Test6: create category without slug, should return 400 bad request"() {
         given: "prepare category data without slug"
         def withoutSlugCategory = CategoryDataFactory.getCategory().withoutSlugCategory
 
@@ -97,7 +97,7 @@ class CreateTest extends Specification {
         response == 400
     }
 
-    def "test7: create category without name,should return 400 bad request"() {
+    def "Test7: create category without name, should return 400 bad request"() {
         given: "prepare category data without name"
         def withoutNameCategory = CategoryDataFactory.getCategory().withoutNameCategory
 
