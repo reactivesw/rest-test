@@ -36,7 +36,7 @@ class CreateTest extends Specification {
         def category = CategoryDataFactory.getCategoryWithAllParams()
 
         when: "call category api to create category"
-        def response = client.post(body: category)
+        def response = client.post(body: category, requestContentType: "application/json")
 
         then: "response status should be 200, params should be equal to given category"
         response.status == 200
@@ -48,7 +48,7 @@ class CreateTest extends Specification {
         category.metaDescription == newCategory.metaDescription
         category.metaKeywords == newCategory.metaKeywords
         category.metaTitle == newCategory.metaTitle
-        category.orderHint == newCategory.getSetOrderHint
+        category.orderHint == newCategory.orderHint
 
         cleanupMap.addObject(response.data.id, response.data.version)
     }

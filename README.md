@@ -80,7 +80,7 @@ read it and parse it for test. Taking `customer-authentication` for example,
  ```
  and then use it for in your test:
  ```java
-    def "test1: sign in with email and password should return customerView and the status of response should be 200"() {
+    def "Test1: sign in with email and password should return customerView and the status of response should be 200"() {
         given: "prepare data that customer needs to sign in"
         def signinInformation = CustomerAuthenticationDataFactory.getSignin().validCustomer
         println CustomerAuthenticationConfig.ROOTURL
