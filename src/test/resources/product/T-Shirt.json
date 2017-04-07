@@ -1,0 +1,131 @@
+{
+  "name": {
+    "en": "T-shirt"
+  },
+  "productType": {
+    "typeId": "product-type",
+    "id": ""
+  },
+  "slug": "T-Shirt",
+  "description": {
+    "en": "A test product named T-Shirt"
+  },
+  "categories": [
+    {
+      "typeId": "category",
+      "id": ""
+    }
+  ],
+  "masterVariant": {
+    "sky": "black-175",
+    "key": "black-175",
+    "prices": [
+      {
+        "value": {
+          "currencyCode": "USD",
+          "centAmount": 2000
+        },
+        "country": "US"
+      }
+    ],
+    "images": [
+      {
+        "url": "http://www.sunspel.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/4/0/4001_102_5_3.jpg",
+        "dimensions": {
+          "w": 2300,
+          "h": 2415
+        }
+      },
+      {
+        "url": "http://www.sunspel.com/media/catalog/product/cache/4/small_image/500x/9df78eab33525d08d6e5fb8d27136e95/4/0/4042_234-web_2_1.jpg",
+        "dimensions": {
+          "w": 1500,
+          "h": 1467
+        }
+      }
+    ],
+    "attributes": [
+      {
+        "name": "size",
+        "value": 175
+      },
+      {
+        "name": "color",
+        "value": "black"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "black-170",
+      "key": "black-170",
+      "prices": [
+        {
+          "value": {
+            "currencyCode": "USD",
+            "centAmount": 2000
+          },
+          "country": "US"
+        }
+      ],
+      "images": [
+        {
+          "url": "http://www.sunspel.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/4/0/4001_102_5_3.jpg",
+          "dimensions": {
+            "w": 2300,
+            "h": 2415
+          }
+        },
+        {
+          "url": "http://www.sunspel.com/media/catalog/product/cache/4/small_image/500x/9df78eab33525d08d6e5fb8d27136e95/4/0/4042_234-web_2_1.jpg",
+          "dimensions": {
+            "w": 1500,
+            "h": 1467
+          }
+        }
+      ],
+      "attributes": [
+        {
+          "name": "size",
+          "value": 170
+        },
+        {
+          "name": "color",
+          "value": "black"
+        }
+      ]
+    },
+    {
+      "sku": "yellow-170",
+      "key": "yellow-170",
+      "prices": [
+        {
+          "value": {
+            "currencyCode": "USD",
+            "centAmount": 2000
+          },
+          "country": "US"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://d1raip7zazff6e.cloudfront.net/data2/RR/SD/MY-2621199/t-shirt-500x500.jpg",
+          "dimensions": {
+            "w": 496,
+            "h": 500
+          }
+        }
+      ],
+      "attributes": [
+        {
+          "name": "size",
+          "value": 170
+        },
+        {
+          "name": "color",
+          "value": "yellow"
+        }
+      ]
+    }
+  ]
+}

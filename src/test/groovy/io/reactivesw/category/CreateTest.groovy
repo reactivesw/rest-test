@@ -15,14 +15,14 @@ class CreateTest extends Specification {
     @Shared
     CleanupMap cleanupMap = new CleanupMap()
 
-    def primerEndpoint = RestClientFactory.getJsonClient(CategoryConfig.rootURL)
+    def client = RestClientFactory.getJsonClient(CategoryConfig.rootURL)
 
     def "test 1 : create category with name and slug, should return 200 and new category"() {
         given: "prepare category data"
-        def category = CategoryDataFactory.getCategory()
+        def category = CategoryDataFactory.getCategory().validCategory1
 
         when: "call category api to create category"
-        def response = primerEndpoint.post(body: category)
+        def response = client.post(body: category)
 
         then: "response status should be 200, name and slug should be equal to given category"
         response.status == 200
@@ -36,7 +36,7 @@ class CreateTest extends Specification {
         def category = CategoryDataFactory.getCategoryWithAllParams()
 
         when: "call category api to create category"
-        def response = primerEndpoint.post(body: category)
+        def response = client.post(body: category)
 
         then: "response status should be 200, params should be equal to given category"
         response.status == 200
@@ -48,9 +48,64 @@ class CreateTest extends Specification {
         category.metaDescription == newCategory.metaDescription
         category.metaKeywords == newCategory.metaKeywords
         category.metaTitle == newCategory.metaTitle
-        category.orderHint == newCategory.orderHint
+        category.orderHint == newCategory.getSetOrderHint
 
         cleanupMap.addObject(response.data.id, response.data.version)
+    }
+
+    def "test3: create category with invalid char in slug,should return 400"() {
+        given: "prepare category data that include invalid char in slug"
+        def includeInvalidCharCategory = CategoryDataFactory.getCategory().includeInvalidCharCategory
+
+        when: "call category api to create category"
+        def response = client.post(body: includeInvalidCharCategory)
+
+        then: "response status should be 400"
+        response == 400
+    }
+
+    def "test4: create category with 1-char length(less than minimum size) slug,should return 400"() {
+        given: "prepare category data including 1-char length slug"
+        def lessThanMinimumSizeCategory = CategoryDataFactory.getCategory().lessThanMinimumSizeCategory
+
+        when: "call category api to create category"
+        def response = client.post(body: lessThanMinimumSizeCategory)
+
+        then: "the status of response should be 400"
+        response == 400
+    }
+
+    def "test5: create category with 277-char length(great than maximum size) slug,should return 400"() {
+        given: "prepare category data including 277-char length slug"
+        def greatThanMaximumSizeCategory = CategoryDataFactory.getCategory().greatThanMaximumSizeCategory
+
+        when: "call category api to create category"
+        def response = client.post(body: greatThanMaximumSizeCategory)
+
+        then: "the status of response should be 400"
+        response == 400
+    }
+
+    def "test6: create category without slug,should return 400 bad request"() {
+        given: "prepare category data without slug"
+        def withoutSlugCategory = CategoryDataFactory.getCategory().withoutSlugCategory
+
+        when: "call category api to create category"
+        def response = client.post(body: withoutSlugCategory)
+
+        then: "the status of response should be 400"
+        response == 400
+    }
+
+    def "test7: create category without name,should return 400 bad request"() {
+        given: "prepare category data without name"
+        def withoutNameCategory = CategoryDataFactory.getCategory().withoutNameCategory
+
+        when: "call category api to create category"
+        def response = client.post(body: withoutNameCategory)
+
+        then: "the status of response should be 400"
+        response == 400
     }
 
     def cleanupSpec() {

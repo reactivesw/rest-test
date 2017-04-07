@@ -14,7 +14,6 @@ class SignInTest extends Specification {
     def "test1: sign in with email and password should return customerView and the status of response should be 200"() {
         given: "prepare data that customer needs to sign in"
         def signinInformation = CustomerAuthenticationDataFactory.getSignin().validCustomer
-        println CustomerAuthenticationConfig.ROOTURL
 
         when: "call signin api to sign in"
         def response = client.post(path: "signin", body: signinInformation, requestContentType: "application/json")

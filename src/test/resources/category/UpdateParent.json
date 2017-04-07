@@ -1,0 +1,12 @@
+{
+  "version": 0,
+  "actions": [
+    {
+      "action": "setParent",
+      "parent": {
+        "typeId": "category",
+        "id":""
+      }
+    }
+  ]
+}

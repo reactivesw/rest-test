@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "actions": [
+    {
+      "action": "setMetaDescription",
+      "metaDescription": {
+        "en": "Updated  MetaDescriptions test"
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "name": "pants",
+  "description": "the common attributes for pants",
+  "attributes": [
+    {
+      "type": {
+        "name": "number"
+      },
+      "name": "size",
+      "lable": {
+        "en": "The size of the pants"
+      },
+      "isRequired": true,
+      "attributeConstraint": "CombinationUnique",
+      "isSearchable": true,
+      "inputHint": "SingleLine"
+    },
+    {
+      "type": {
+        "name": "text"
+      },
+      "name": "color",
+      "label": {
+        "en": "The color of the pants"
+      },
+      "isRequired": true,
+      "attributeConstraint": "CombinationUnique",
+      "isSearchable": true,
+      "inputHint": "SingleLine"
+    },
+    {
+      "type": {
+        "name": "text"
+      },
+      "name": "origin",
+      "label": {
+        "en": "The place of origin of the pants"
+      },
+      "isRequired": true,
+      "attributeConstraint": "CombinationUnique",
+      "isSearchable": true,
+      "inputHint": "SingleLine"
+    }
+  ]
+}

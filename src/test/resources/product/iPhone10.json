@@ -1,0 +1,244 @@
+{
+    "key": "iPhone10",
+    "name": {
+        "en": "iPhone10"
+    },
+    "productType": {
+        "id": "",
+        "typeId": "product-type"
+    },
+    "slug": "iPhone10",
+    "description": {
+        "en": "A test product named iPhone10"
+    },
+    "categories": [{
+        "typeId": "category",
+        "id": ""
+    }],
+    "taxCategory": {
+        "id": "",
+        "typeId": "tax-category"
+    },
+    "masterVariant": {
+        "sku": "iPhone10-4_6-black-2G-32G",
+        "key": "iPhone10-4_6-black-2G-32G",
+        "prices": [{
+            "value": {
+                "currencyCode": "USD",
+                "centAmount": 39900
+            },
+            "country": "US"
+        }, {
+            "value": {
+                "currencyCode": "CNY",
+                "centAmount": 269900
+            },
+            "country": "CN"
+        }],
+        "images": [{
+            "url": "https://d3nevzfk7ii3be.cloudfront.net/igi/ipv5OG2NckM3DfE2.large",
+            "dimensions": {
+                "w": 800,
+                "h": 600
+            }
+        }, {
+            "url": "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iphone/iphone-6splus-colors.jpg",
+            "dimensions": {
+                "w": 956,
+                "h": 700
+            }
+        }],
+        "attributes": [{
+            "name": "size",
+            "value": 4.6
+        }, {
+            "name": "color",
+            "value": "black"
+        }, {
+            "name": "ram",
+            "value": "2GB"
+        }, {
+            "name": "rom",
+            "value": "32GB"
+        }]
+    },
+    "variants": [{
+        "sku": "iPhone10-4_6-black-2G-64G",
+        "key": "iPhone10-4_6-black-2G-64G",
+        "prices": [{
+            "value": {
+                "currencyCode": "USD",
+                "centAmount": 49900
+            },
+            "country": "US"
+        }, {
+            "value": {
+                "currencyCode": "CNY",
+                "centAmount": 349900
+            },
+            "country": "CN"
+        }],
+        "images": [{
+            "url": "https://d3nevzfk7ii3be.cloudfront.net/igi/ipv5OG2NckM3DfE2.large",
+            "dimensions": {
+                "w": 800,
+                "h": 600
+            }
+        }, {
+            "url": "https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iphone/iphone-6splus-colors.jpg",
+            "dimensions": {
+                "w": 956,
+                "h": 700
+            }
+        }],
+        "attributes": [{
+            "name": "size",
+            "value": 4.6
+        }, {
+            "name": "color",
+            "value": "black"
+        }, {
+            "name": "ram",
+            "value": "2GB"
+        }, {
+            "name": "rom",
+            "value": "64GB"
+        }]
+    }, {
+        "sku": "iPhone10-4_6-white-2G-32G",
+        "key": "iPhone10-4_6-white-2G-32G",
+        "prices": [{
+                "value": {
+                    "currencyCode": "USD",
+                    "centAmount": 39900
+                },
+                "country": "US"
+            },
+            {
+                "value": {
+                    "currencyCode": "CNY",
+                    "centAmount": 269900
+                },
+                "country": "CN"
+            }
+        ],
+        "images": [{
+            "url": "https://indianexpressonline.files.wordpress.com/2015/12/iphone-5s-big1.jpg",
+            "dimensions": {
+                "w": 759,
+                "h": 422
+            }
+        }, {
+            "url": "http://www.theblackfridaycoupons.com/wp-content/uploads/2015/11/Amazon-Black-Friday-2016-Apple-iPhone-Deals.jpg",
+            "dimensions": {
+                "w": 800,
+                "h": 450
+            }
+        }],
+        "attributes": [{
+            "name": "size",
+            "value": 4.6
+        }, {
+            "name": "color",
+            "value": "white"
+        }, {
+            "name": "ram",
+            "value": "2GB"
+        }, {
+            "name": "rom",
+            "value": "32GB"
+        }]
+    }, {
+        "sku": "iPhone10-4_6-white-2G-64G",
+        "key": "iPhone10-4_6-white-2G-64G",
+        "prices": [{
+            "value": {
+                "currencyCode": "USD",
+                "centAmount": 49900
+            },
+            "country": "US"
+        }, {
+            "value": {
+                "currencyCode": "CNY",
+                "centAmount": 349900
+            },
+            "country": "CN"
+        }],
+        "images": [{
+            "url": "https://indianexpressonline.files.wordpress.com/2015/12/iphone-5s-big1.jpg",
+            "dimensions": {
+                "w": 759,
+                "h": 422
+            }
+        }, {
+            "url": "http://www.theblackfridaycoupons.com/wp-content/uploads/2015/11/Amazon-Black-Friday-2016-Apple-iPhone-Deals.jpg",
+            "dimensions": {
+                "w": 800,
+                "h": 450
+            }
+        }, {
+            "url": "https://ssl.apple.com/iphone/trade-up/images/og.jpg?201611031616",
+            "dimensions": {
+                "w": 1200,
+                "h": 630
+            }
+        }],
+        "attributes": [{
+            "name": "size",
+            "value": 4.6
+        }, {
+            "name": "color",
+            "value": "white"
+        }, {
+            "name": "ram",
+            "value": "2GB"
+        }, {
+            "name": "rom",
+            "value": "64GB"
+        }]
+    }, {
+        "sku": "iPhone10-5_0-gold-2G-128G",
+        "key": "iPhone10-5_0-gold-2G-128G",
+        "prices": [{
+            "value": {
+                "currencyCode": "USD",
+                "centAmount": 59900
+            },
+            "country": "US"
+        }, {
+            "value": {
+                "currencyCode": "CNY",
+                "centAmount": 439900
+            },
+            "country": "CN"
+        }],
+        "images": [{
+            "url": "http://cdn.macrumors.com/article-new/2015/02/iphone7mockupantennabands-800x659.jpg",
+            "dimensions": {
+                "w": 800,
+                "h": 659
+
+            }
+        }, {
+            "url": "https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6s/gallery3/iphone6s-gallery3-2015?wid=2000&hei=1536&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=HGukp2",
+            "dimensions": {
+                "w": 2000,
+                "h": 1536
+            }
+        }],
+        "attributes": [{
+            "name": "size",
+            "value": 5.0
+        }, {
+            "name": "color",
+            "value": "gold"
+        }, {
+            "name": "ram",
+            "value": "2GB"
+        }, {
+            "name": "rom",
+            "value": "128GB"
+
+        }]
+    }]
+}

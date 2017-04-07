@@ -1,0 +1,35 @@
+{
+  "invalidAction": {
+    "version": 0,
+    "actions": [
+      {
+        "action": "invalidName",
+        "name": {
+          "en": "Updated Category Names with invalid action"
+        }
+      }
+    ]
+  },
+  "invalidVersionWithString": {
+    "version": "fdsf",
+    "actions": [
+      {
+        "action": "setName",
+        "name": {
+          "en": "Updated Category Names"
+        }
+      }
+    ]
+  },
+  "invalidVersionWithBigInteger": {
+    "version": 100000000000000000000000000000000,
+    "actions": [
+      {
+        "action": "setName",
+        "name": {
+          "en": "Updated Category Names"
+        }
+      }
+    ]
+  }
+}

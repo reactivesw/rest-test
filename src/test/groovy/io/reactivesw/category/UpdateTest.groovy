@@ -24,7 +24,7 @@ class UpdateTest extends Specification {
     CleanupMap cleanupMap = new CleanupMap()
 
     def setupSpec() {
-        category = CategoryDataFactory.getCategory()
+        category = CategoryDataFactory.getCategory().validCategory1
         primerEndpoint = RestClientFactory.getJsonClient(CategoryConfig.rootURL)
         def response = primerEndpoint.post(body: category)
         id = response.data.id
@@ -37,7 +37,7 @@ class UpdateTest extends Specification {
         def setName = CategoryDataFactory.getSetNameAction()
         setName['version'] = cleanupMap.allObjects[id]
 
-        when: "call api to update category name"
+        when: "call api to update ctegory name"
         def response = primerEndpoint.put([path: id, body: setName])
 
         then: "return 200 and category with new name"
@@ -88,6 +88,116 @@ class UpdateTest extends Specification {
         response.status == 200
         response.data.name == multiAction.actions[0].name
         response.data.slug == multiAction.actions[1].slug
+    }
+
+
+    def "test5: update with invalid action ,status of response should be 400 "() {
+        given: "prepare invalid action"
+        def invalidAction = CategoryDataFactory.getInvalidCategoryUpdate().invalidAction
+        invalidAction['version'] = cleanupMap.allObjects[id]
+
+        when: "call api to update category"
+        def response = primerEndpoint.put([path: id, body: invalidAction])
+
+        then: "response should be 400"
+        response == 400
+    }
+
+    def "test6: update with invalid version(String),status of response should be 400"() {
+        given: "prepare invalid version(string) "
+        def invalidVersionWithString = CategoryDataFactory.getInvalidCategoryUpdate().invalidVersionWithString
+
+        when: "call api to upate category"
+        def response = primerEndpoint.put([path: id, body: invalidVersionWithString])
+
+        then: "response should be 400"
+        response == 400
+    }
+
+    def "test7: update with big integer version,status of response should be 400 "() {
+        given: "prepare invalid version (big integer)"
+        def invalidVersionWithBigInteger = CategoryDataFactory.getInvalidCategoryUpdate().invalidVersionWithBigInteger
+
+        when: "call api to update category"
+        def response = primerEndpoint.put([path: id, body: invalidVersionWithBigInteger])
+
+        then: "response should be 400"
+        response == 400
+    }
+
+    def "test9: update external ID,should return 200 and category view"() {
+        given: "prepare externalID"
+        def setExternalID = CategoryDataFactory.getSetExternalID()
+        setExternalID['version'] = cleanupMap.allObjects[id]
+
+        when: "call api to update category description"
+        def response = primerEndpoint.put([path: id, body: setExternalID])
+
+        then: "the status of response should be 200,and with new externalID"
+        cleanupMap.addObject(response.data.id, response.data.version)
+        response.status == 200
+        response.data.externalId == setExternalID.actions[0].externalId
+    }
+
+    def "test10: update metadescription and should return 200 and category view"() {
+        given: "prepare metaDescriptin"
+        def setMetaDescription = CategoryDataFactory.getSetMetaDescription()
+        setMetaDescription['version'] = cleanupMap.allObjects[id]
+
+        when: "call api to update meta description"
+        def response = primerEndpoint.put([path: id, body: setMetaDescription])
+
+        then: "the status of response should be 200,and with new meta description"
+        cleanupMap.addObject(response.data.id, response.data.version)
+        response.status == 200
+        response.data.metaDescription == setMetaDescription.actions[0].metaDescription
+    }
+
+    def "test11: update meta keywords and should return 200 and category view"() {
+        given: "prepare meta keywords"
+        def setMetaKeywords = CategoryDataFactory.getSetMetaKeywords()
+        setMetaKeywords['version'] = cleanupMap.allObjects[id]
+
+        when: "call api to update meta keywords"
+        def response = primerEndpoint.put([path: id, body: setMetaKeywords])
+
+        then: "the status of response should be 200,and with new meta description"
+        cleanupMap.addObject(response.data.id, response.data.version)
+        response.status == 200
+        response.data.metaKeywords == setMetaKeywords.actions[0].metaKeywords
+    }
+
+    def "test12: update meta title and should return 200 and category view"() {
+        given: "prepare meta title"
+        def setMetaTitle = CategoryDataFactory.getSetMetaTitle()
+        setMetaTitle['version'] = cleanupMap.allObjects[id]
+
+        when: "call api to update meta title"
+        def response = primerEndpoint.put([path: id, body: setMetaTitle])
+
+        then: "the status of response should be 200,and with new meta title "
+        cleanupMap.addObject(response.data.id, response.data.version)
+        response.status == 200
+        response.data.metaTitle == setMetaTitle.actions[0].metaTitle
+    }
+
+    def "test13: update parent,should return 200 and category view"() {
+        given: "prepare  sub category  data"
+        def subCategory = CategoryDataFactory.getCategory().validCategory2
+        def subCategoryResponse = primerEndpoint.post(body: subCategory)
+        def subCategoryId = subCategoryResponse.data.id
+        def subCategoryVersion = subCategoryResponse.data.version
+        def setParent = CategoryDataFactory.getSetParent()
+        setParent['version'] = subCategoryVersion
+        setParent.actions[0].parent.id = id
+
+        when: "call api to update parent"
+        def response = primerEndpoint.put([path: subCategoryId, body: setParent, requestContentType: "application/json"])
+
+        then: "the status of response should be 200,and category view "
+        response.status == 200
+        response.data.parent == setParent.actions[0].parent
+        response.data.id == subCategoryId
     }
 
     def cleanupSpec() {

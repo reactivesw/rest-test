@@ -19,7 +19,7 @@ class DeleteTest extends Specification {
     def primerEndpoint
 
     def setupSpec() {
-        def category = CategoryDataFactory.getCategory()
+        def category = CategoryDataFactory.getCategory().validCategory1
         primerEndpoint = RestClientFactory.getJsonClient(CategoryConfig.rootURL)
         def response = primerEndpoint.post(body: category)
         id = response.data.id

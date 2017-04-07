@@ -7,7 +7,7 @@ import spock.lang.Specification
 /**
  * Test get anonymous token api
  */
-class GetAnonymousTokenTest extends Specification{
+class etAnonymousTokenTest extends Specification{
     def "test1: get anonymous token test should return a token and response status should be 200"(){
         given:
         def client=RestClientFactory.getClient(CustomerAuthenticationConfig.ROOTURL)

@@ -1,0 +1,202 @@
+{
+    "name": {
+        "en": "MECHREVO MR-Q6"
+    },
+    "productType": {
+        "typeId": "product-type",
+        "id": ""
+    },
+    "slug": "MSI_GT79",
+    "description": {
+        "en": "A test product named MECHREVO MR-Q6"
+    },
+    "categories": [{
+        "typeId": "category",
+        "id": ""
+    }],
+    "masterVariant": {
+        "sku": "GTX1050Ti",
+        "key": "GTX1050Ti",
+        "prices": [{
+            "value": {
+                "currencyCode": "USD",
+                "centAmount": 199900
+            },
+            "country": "US"
+        }],
+        "images": [{
+                "url": "https://img14.360buyimg.com/n1/s450x450_jfs/t3817/347/3220824439/96421/8c532ff/587c65b5Nbc7a8f9a.jpg",
+                "dimensions": {
+                    "w": 4000,
+                    "h": 1946
+                }
+            },
+            {
+                "url": "http://img14.360buyimg.com/n1/s450x450_jfs/t3082/292/5686983845/52433/e0ae24a8/587c65b7N18babf3d.jpg",
+                "dimensions": {
+                    "w": 4000,
+                    "h": 1946
+                }
+            },
+            {
+                "url": "http://img14.360buyimg.com/n1/s450x450_jfs/t4039/286/1509849744/99684/1673b669/587c65baN84d6e68e.jpg",
+                "dimensions": {
+                    "w": 4000,
+                    "h": 2764
+                }
+            }
+        ],
+        "attributes": [{
+                "name": "cpu",
+                "value": "i7-6700HK"
+            },
+            {
+                "name": "weight",
+                "value": "17.3kg"
+            },
+            {
+                "name": "graphicCard",
+                "value": "GTX 1050Ti"
+            }
+        ]
+    },
+    "variants": [{
+            "sku": "GTX1060",
+            "key": "GTX1060",
+            "prices": [{
+                "value": {
+                    "currencyCode": "USD",
+                    "centAmount": 179900
+                },
+                "country": "US"
+            }],
+            "images": [{
+                    "url": "https://img14.360buyimg.com/n1/s450x450_jfs/t3817/347/3220824439/96421/8c532ff/587c65b5Nbc7a8f9a.jpg",
+                    "dimensions": {
+                        "w": 4000,
+                        "h": 1946
+                    }
+                },
+                {
+                    "url": "http://img14.360buyimg.com/n1/s450x450_jfs/t3082/292/5686983845/52433/e0ae24a8/587c65b7N18babf3d.jpg",
+                    "dimensions": {
+                        "w": 4000,
+                        "h": 1946
+                    }
+                },
+                {
+                    "url": "http://img14.360buyimg.com/n1/s450x450_jfs/t4039/286/1509849744/99684/1673b669/587c65baN84d6e68e.jpg",
+                    "dimensions": {
+                        "w": 4000,
+                        "h": 2764
+                    }
+                }
+            ],
+            "attributes": [{
+                    "name": "cpu",
+                    "value": "i7-6700HK"
+                },
+                {
+                    "name": "weight",
+                    "value": "17.3KG"
+                },
+                {
+                    "name": "graphicCard",
+                    "value": "GTX1060"
+                }
+            ]
+        },
+        {
+            "sku": "GTX1070",
+            "key": "GTX1070",
+            "prices": [{
+                "value": {
+                    "currencyCode": "USD",
+                    "centAmount": 189900
+                },
+                "country": "US"
+            }],
+            "images": [{
+                    "url": "https://img14.360buyimg.com/n1/s450x450_jfs/t3817/347/3220824439/96421/8c532ff/587c65b5Nbc7a8f9a.jpg",
+                    "dimensions": {
+                        "w": 4000,
+                        "h": 1946
+                    }
+                },
+                {
+                    "url": "http://img14.360buyimg.com/n1/s450x450_jfs/t3082/292/5686983845/52433/e0ae24a8/587c65b7N18babf3d.jpg",
+                    "dimensions": {
+                        "w": 4000,
+                        "h": 1946
+                    }
+                },
+                {
+                    "url": "http://img14.360buyimg.com/n1/s450x450_jfs/t4039/286/1509849744/99684/1673b669/587c65baN84d6e68e.jpg",
+                    "dimensions": {
+                        "w": 4000,
+                        "h": 2764
+                    }
+                }
+            ],
+            "attributes": [{
+                    "name": "cpu",
+                    "value": "i7-6700HK"
+                },
+                {
+                    "name": "weight",
+                    "value": "17.3KG"
+                },
+                {
+                    "name": "graphicCard",
+                    "value": "GTX1070"
+                }
+            ]
+        },
+        {
+            "sku": "GTX1080",
+            "key": "GTX1080",
+            "prices": [{
+                "value": {
+                    "currencyCode": "USD",
+                    "centAmount": 189900
+                },
+                "country": "US"
+            }],
+            "images": [{
+                    "url": "http://img14.360buyimg.com/n1/s450x450_jfs/t3082/292/5686983845/52433/e0ae24a8/587c65b7N18babf3d.jpg",
+                    "dimensions": {
+                        "w": 4000,
+                        "h": 1946
+                    }
+                },
+                {
+                    "url": "https://img14.360buyimg.com/n1/s450x450_jfs/t3817/347/3220824439/96421/8c532ff/587c65b5Nbc7a8f9a.jpg",
+                    "dimensions": {
+                        "w": 4000,
+                        "h": 1946
+                    }
+                },
+                {
+                    "url": "http://img14.360buyimg.com/n1/s450x450_jfs/t4039/286/1509849744/99684/1673b669/587c65baN84d6e68e.jpg",
+                    "dimensions": {
+                        "w": 4000,
+                        "h": 2764
+                    }
+                }
+            ],
+            "attributes": [{
+                    "name": "cpu",
+                    "value": "i7-6700HK"
+                },
+                {
+                    "name": "weight",
+                    "value": "17.3KG"
+                },
+                {
+                    "name": "graphicCard",
+                    "value": "GTX1080"
+                }
+            ]
+        }
+    ]
+}

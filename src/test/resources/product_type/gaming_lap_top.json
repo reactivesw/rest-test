@@ -1,0 +1,42 @@
+{
+    "name": "gaming lap top",
+    "description": "the common attributes for gaming lap top",
+    "key": "gaming-lap-top",
+    "attributes": [{
+        "type": {
+            "name": "number"
+        },
+        "name": "size",
+        "label": {
+            "en": "The size of the gaming lap top"
+        },
+        "isRequired": true,
+        "attributeConstraint": "SameForAll",
+        "isSearchable": true,
+        "inputHint": "SingleLine"
+    }, {
+        "type": {
+            "name": "text"
+        },
+        "name": "cpu",
+        "label": {
+            "en": "The cpu of the gaming lap top"
+        },
+        "isRequired": true,
+        "attributeConstraint": "CombinationUnique",
+        "isSearchable": true,
+        "inputHint": "SingleLine"
+    }, {
+        "type": {
+            "name": "text"
+        },
+        "name": "graphicCrad",
+        "label": {
+            "en": "The graphic card of the gaming lap top"
+        },
+        "isRequired": true,
+        "attributeConstraint": "CombinationUnique",
+        "isSearchable": true,
+        "inputHint": "SingleLine"
+    }]
+}

@@ -24,7 +24,7 @@ class GetTest extends Specification {
     CleanupMap cleanupMap = new CleanupMap()
 
     def setupSpec() {
-        category = CategoryDataFactory.getCategory()
+        category = CategoryDataFactory.getCategory().validCategory1
         primerEndpoint = RestClientFactory.getJsonClient(CategoryConfig.rootURL)
         def response = primerEndpoint.post(body: category)
         id = response.data.id
