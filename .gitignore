@@ -41,6 +41,9 @@ Thumbs.db
 # Gradle Files #
 ################
 .gradle
+gradlew
+gradlew.bat
+settings.gradle
 .m2
 !gradle-wrapper.jar
 !gradle-wrapper.properties
@@ -82,3 +85,6 @@ hs_err_pid*
 .sass-cache
 src/main/resources/static/css
 .gems
+
+# travis ci
+.travis.yml

@@ -41,6 +41,9 @@ class GetCreditCardsTest extends Specification {
     }
 
     def "Test2: get credit cards with invalid customer id"() {
+        given: "prepare invalid data"
+        def  client=RestClientFactory.getClient(PaymentConfig.ROOTURL)
+        def requestParam=[customerId: "invalid-customer-id"]
 
     }
 
