@@ -31,7 +31,7 @@ class GetTest extends Specification {
         cleanupMap.addObject(response.data.id, response.data.version)
     }
 
-    def "Test1 : get category by id and should return 200 ok"() {
+    def "Test1: get category by id, should return 200 ok"() {
         when: "call api to get category with id"
         def response = client.get(path: id)
 
@@ -41,7 +41,7 @@ class GetTest extends Specification {
         category.slug == response.data.slug
     }
 
-    def "Test2 : get all category with root url and should return 200 ok"() {
+    def "Test2: get all category with root url, should return 200 ok"() {
         when: "call api to get all category"
         def response = client.get(path: null)
 
@@ -50,7 +50,7 @@ class GetTest extends Specification {
         response.data.count >= 1
     }
 
-    def "Test3 : get category with not exist id and should return 404 not found"() {
+    def "Test3: get category with not exist id, should return 404 not found"() {
         given: "prepare a not exist id"
         def wrongId = "this is a wrong id"
 

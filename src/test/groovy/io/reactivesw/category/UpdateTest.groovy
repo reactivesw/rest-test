@@ -32,7 +32,7 @@ class UpdateTest extends Specification {
         cleanupMap.addObject(response.data.id, response.data.version)
     }
 
-    def "Test1 : update category name and should return 200 ok"() {
+    def "Test1: update category name, should return 200 ok"() {
         given: "prepare data"
         def setName = CategoryDataFactory.getSetNameAction()
         setName['version'] = cleanupMap.allObjects[id]
@@ -47,7 +47,7 @@ class UpdateTest extends Specification {
 
     }
 
-    def "Test2 : update category slug and should return 200 ok"() {
+    def "Test2: update category slug, should return 200 ok"() {
         given: "prepare data"
         def setSlug = CategoryDataFactory.getSetSlugAction()
         setSlug['version'] = cleanupMap.allObjects[id]
@@ -61,7 +61,7 @@ class UpdateTest extends Specification {
         response.data.slug == setSlug.actions[0].slug
     }
 
-    def "Test3 : update category description and should return 200 ok"() {
+    def "Test3: update category description, should return 200 ok"() {
         given: "prepare data"
         def setDescription = CategoryDataFactory.getSetDescriptionAction()
         setDescription['version'] = cleanupMap.allObjects[id]
@@ -75,7 +75,7 @@ class UpdateTest extends Specification {
         response.data.description == setDescription.actions[0].description
     }
 
-    def "Test4 : multi update action and should return 200 ok"() {
+    def "Test4: multi update action, should return 200 ok"() {
         given: "prepare data"
         def multiAction = CategoryDataFactory.getMultiUpdateAction()
         multiAction['version'] = cleanupMap.allObjects[id]
@@ -91,7 +91,7 @@ class UpdateTest extends Specification {
     }
 
 
-    def "Test5: update with invalid action, status of response should be 400 bad request "() {
+    def "Test5: update with invalid actions, should return 400 bad request"() {
         given: "prepare invalid action"
         def invalidAction = CategoryDataFactory.getInvalidCategoryUpdate().invalidAction
         invalidAction['version'] = cleanupMap.allObjects[id]
@@ -103,7 +103,7 @@ class UpdateTest extends Specification {
         response == 400
     }
 
-    def "Test6: update with invalid version(String), status of response should be 400 bad request"() {
+    def "Test6: update with invalid version(String), should return 400 bad request"() {
         given: "prepare invalid version(string) "
         def invalidVersionWithString = CategoryDataFactory.getInvalidCategoryUpdate().invalidVersionWithString
 
@@ -114,7 +114,7 @@ class UpdateTest extends Specification {
         response == 400
     }
 
-    def "Test7: update with big integer version, status of response should be 400 bad request"() {
+    def "Test7: update with big integer version, should return 400 bad request"() {
         given: "prepare invalid version (big integer)"
         def invalidVersionWithBigInteger = CategoryDataFactory.getInvalidCategoryUpdate().invalidVersionWithBigInteger
 
@@ -139,7 +139,7 @@ class UpdateTest extends Specification {
         response.data.externalId == setExternalID.actions[0].externalId
     }
 
-    def "Test10: update metadescription and should return 200 ok and category view"() {
+    def "Test10: update metadescription, should return 200 ok and category view"() {
         given: "prepare meta description"
         def setMetaDescription = CategoryDataFactory.getSetMetaDescription()
         setMetaDescription['version'] = cleanupMap.allObjects[id]
@@ -153,7 +153,7 @@ class UpdateTest extends Specification {
         response.data.metaDescription == setMetaDescription.actions[0].metaDescription
     }
 
-    def "Test11: update meta keywords and should return 200 ok and category view"() {
+    def "Test11: update meta keywords, should return 200 ok and category view"() {
         given: "prepare meta keywords"
         def setMetaKeywords = CategoryDataFactory.getSetMetaKeywords()
         setMetaKeywords['version'] = cleanupMap.allObjects[id]
@@ -167,7 +167,7 @@ class UpdateTest extends Specification {
         response.data.metaKeywords == setMetaKeywords.actions[0].metaKeywords
     }
 
-    def "Test12: update meta title and should return 200 ok and category view"() {
+    def "Test12: update meta title, should return 200 ok and category view"() {
         given: "prepare meta title"
         def setMetaTitle = CategoryDataFactory.getSetMetaTitle()
         setMetaTitle['version'] = cleanupMap.allObjects[id]

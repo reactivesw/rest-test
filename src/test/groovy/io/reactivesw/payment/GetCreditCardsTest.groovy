@@ -23,7 +23,7 @@ class GetCreditCardsTest extends Specification {
         customerId = response.data.customerView.id
     }
 
-    def "Test1: get all credit cards by customer id, should return all credit information, status of response should be 200 ok"() {
+    def "Test1: get all credit cards by customer id, should return  200 ok and all credit information"() {
         given: "prepare data"
         def client = RestClientFactory.getClient(PaymentConfig.ROOTURL)
         def requestParam = [customerId: customerId]
@@ -42,8 +42,8 @@ class GetCreditCardsTest extends Specification {
 
     def "Test2: get credit cards with invalid customer id"() {
         given: "prepare invalid data"
-        def  client=RestClientFactory.getClient(PaymentConfig.ROOTURL)
-        def requestParam=[customerId: "invalid-customer-id"]
+        def client = RestClientFactory.getClient(PaymentConfig.ROOTURL)
+        def requestParam = [customerId: "invalid-customer-id"]
 
     }
 

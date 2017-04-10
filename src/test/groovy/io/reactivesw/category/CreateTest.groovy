@@ -17,7 +17,7 @@ class CreateTest extends Specification {
 
     def client = RestClientFactory.getJsonClient(CategoryConfig.rootURL)
 
-    def "Test1 : create category with name and slug, should return 200 ok and new category"() {
+    def "Test1: create category with name and slug, should return 200 ok and category view"() {
         given: "prepare category data"
         def category = CategoryDataFactory.getCategory().validCategory1
 
@@ -31,7 +31,7 @@ class CreateTest extends Specification {
         cleanupMap.addObject(response.data.id, response.data.version)
     }
 
-    def "Test2 : create category with all parameter, should return 200 ok and new category"() {
+    def "Test2: create category with all parameter, should return 200 ok and category view"() {
         given: "prepare category data"
         def category = CategoryDataFactory.getCategoryWithAllParams()
 

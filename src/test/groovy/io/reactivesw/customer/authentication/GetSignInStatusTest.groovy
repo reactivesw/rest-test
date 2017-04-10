@@ -20,14 +20,14 @@ class GetSignInStatusTest extends Specification {
         when: "call get sign in status api"
         def response = client.get(path: "status", query: token)
 
-        then: "response status should be 200 and response should be equal to customer id"
+        then: "response status should be 200, response should be equal to customer id"
         with(response) {
             status == 200
             data.str == res.data.customerView.id
         }
     }
 
-    def "Test2: get sign in status with invalid token, response status should be 400 bad request"() {
+    def "Test2: get sign in status with invalid token,  should return 400 bad request"() {
         given: "prepare data"
         def invalidToken = "invalid_token"
         def token = ['token': invalidToken]
@@ -39,7 +39,7 @@ class GetSignInStatusTest extends Specification {
         response == 401
     }
 
-    def "Test3: get sign in status with anonymous token, response status should return 200 ok"() {
+    def "Test3: get sign in status with anonymous token, should return 200 ok"() {
         given: "prepare anonymous token"
         def res = client.get(path: "anonymous")
         def anonymousToken = ['token': res.data.str]
