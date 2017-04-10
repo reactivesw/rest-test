@@ -9,7 +9,7 @@ import spock.lang.Shared
 import spock.lang.Specification
 
 /**
- * Created by Davis on 17/3/9.
+ * create category test.
  */
 class CreateTest extends Specification {
     @Shared
@@ -18,13 +18,13 @@ class CreateTest extends Specification {
     def client = RestClientFactory.getJsonClient(CategoryConfig.rootURL)
 
     def "Test1: create category with name and slug, should return 200 ok and category view"() {
-        given: "prepare category data"
+        given: "prepare  data"
         def category = CategoryDataFactory.getCategory().validCategory1
 
         when: "call category api to create category"
         def response = client.post(body: category)
 
-        then: "response status should be 200, name and slug should be equal to given category"
+        then: "should return 200 ok and category view"
         response.status == 200
         response.data.name == category.name
         response.data.slug == category.slug
@@ -32,13 +32,13 @@ class CreateTest extends Specification {
     }
 
     def "Test2: create category with all parameter, should return 200 ok and category view"() {
-        given: "prepare category data"
+        given: "prepare data"
         def category = CategoryDataFactory.getCategoryWithAllParams()
 
         when: "call category api to create category"
         def response = client.post(body: category, requestContentType: "application/json")
 
-        then: "response status should be 200, params should be equal to given category"
+        then: "should return 200 ok and category view"
         response.status == 200
         def newCategory = response.data
         category.name == newCategory.name
@@ -54,57 +54,57 @@ class CreateTest extends Specification {
     }
 
     def "Test3: create category with invalid char in slug, should return 400 bad request"() {
-        given: "prepare category data that include invalid char in slug"
+        given: "prepare data"
         def includeInvalidCharCategory = CategoryDataFactory.getCategory().includeInvalidCharCategory
 
         when: "call category api to create category"
         def response = client.post(body: includeInvalidCharCategory)
 
-        then: "response status should be 400"
+        then: "should return 400 bad request"
         response == 400
     }
 
     def "Test4: create category with 1-char length(less than minimum size) slug, should return 400 bad request"() {
-        given: "prepare category data including 1-char length slug"
+        given: "prepare data"
         def lessThanMinimumSizeCategory = CategoryDataFactory.getCategory().lessThanMinimumSizeCategory
 
         when: "call category api to create category"
         def response = client.post(body: lessThanMinimumSizeCategory)
 
-        then: "the status of response should be 400"
+        then: "should return 400 bad request"
         response == 400
     }
 
     def "Test5: create category with 277-char length(great than maximum size) slug, should return 400 bad request"() {
-        given: "prepare category data including 277-char length slug"
+        given: "prepare data"
         def greatThanMaximumSizeCategory = CategoryDataFactory.getCategory().greatThanMaximumSizeCategory
 
         when: "call category api to create category"
         def response = client.post(body: greatThanMaximumSizeCategory)
 
-        then: "the status of response should be 400"
+        then: "should return 400 bad request"
         response == 400
     }
 
     def "Test6: create category without slug, should return 400 bad request"() {
-        given: "prepare category data without slug"
+        given: "prepare data"
         def withoutSlugCategory = CategoryDataFactory.getCategory().withoutSlugCategory
 
         when: "call category api to create category"
         def response = client.post(body: withoutSlugCategory)
 
-        then: "the status of response should be 400"
+        then: "should return 400 bad request"
         response == 400
     }
 
     def "Test7: create category without name, should return 400 bad request"() {
-        given: "prepare category data without name"
+        given: "prepare data"
         def withoutNameCategory = CategoryDataFactory.getCategory().withoutNameCategory
 
         when: "call category api to create category"
         def response = client.post(body: withoutNameCategory)
 
-        then: "the status of response should be 400"
+        then: "should return 400 bad request"
         response == 400
     }
 

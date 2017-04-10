@@ -27,7 +27,7 @@ class GetSignInStatusTest extends Specification {
         }
     }
 
-    def "Test2: get sign in status with invalid token,  should return 400 bad request"() {
+    def "Test2: get sign in status with invalid token, should return 401 unauthorized"() {
         given: "prepare data"
         def invalidToken = "invalid_token"
         def token = ['token': invalidToken]
@@ -35,19 +35,19 @@ class GetSignInStatusTest extends Specification {
         when: "call get sign in status api"
         def response = client.get(path: "status", query: token, requestContentType: "application/json")
 
-        then: "response status should be 400"
+        then: "should return 401 unauthorized"
         response == 401
     }
 
     def "Test3: get sign in status with anonymous token, should return 200 ok"() {
-        given: "prepare anonymous token"
+        given: "prepare data"
         def res = client.get(path: "anonymous")
         def anonymousToken = ['token': res.data.str]
 
         when: "call get sign in status api"
         def response = client.get(path: "status", query: anonymousToken, requestContentType: "application/json")
 
-        then: "response status should be 200"
+        then: "should return 200 ok"
         response.status == 200
     }
 }

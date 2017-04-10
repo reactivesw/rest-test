@@ -58,20 +58,4 @@ class CategoryDataFactory {
     public static def getSetParent() {
         return slurper.parse(new FileReader('src/test/resources/category/UpdateParent.json'))
     }
-
-    public static def getClothes() {
-        return slurper.parse(new FileReader("src/test/resources/category/clothes.json"))
-    }
-
-    public static def getDesktop() {
-        return slurper.parse(new FileReader("src/test/resources/category/desk_top.json"))
-    }
-
-    public static def getPants() {
-        return slurper.parse(new FileReader("src/test/resources/category/pants.json"))
-    }
-
-    public static def getSmartPhone() {
-        return slurper.parse(new FileReader("src/test/resources/category/smart_phone.json"))
-    }
 }

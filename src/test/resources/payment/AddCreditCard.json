@@ -1,0 +1,10 @@
+{
+  "validCreditCardDraft": {
+    "number": "4500600000000061",
+    "cardholderName": "tester",
+    "expirationMonth": "09",
+    "expirationYear": "2019",
+    "cvv": "123",
+    "customerId": "replace-with-customer-id"
+  }
+}

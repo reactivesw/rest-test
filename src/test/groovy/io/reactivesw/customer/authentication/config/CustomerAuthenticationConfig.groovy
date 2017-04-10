@@ -3,9 +3,9 @@ package io.reactivesw.customer.authentication.config
 import io.reactivesw.config.GlobalConfig
 
 /**
- * the configuration for customer authentication test
+ * configuration of customer authentication test
  */
-class CustomerAuthenticationConfig{
+class CustomerAuthenticationConfig {
 
     static final String PATH = "auth"
 
