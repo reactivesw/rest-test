@@ -2,7 +2,18 @@
 ## 1. Introduction
 This repo is for RESTful api test
 
-## 2. Demonstration of project structure
+## 2. Technology stack
+
+This test is powered by many powerful frameworks and third-party library:
+
++ [gradle](https://gradle.org/) 
++ [Spock Framework](http://spockframework.org/spock/docs/1.1-rc-3/index.html) 
++ [Groovy](https://groovy-lang.org)
+
+Make sure you have installed these tools in your platform
+
+## 3. Demonstration of project structure
+Taking `category` service for example
 ``` java
 └── src
 	└── test
@@ -19,8 +30,6 @@ This repo is for RESTful api test
 		│           │       └── CategoryConfig.groovy
 		│           ├── config          //Global configuration for the entire project
 		│           │   └── GlobalConfig.groovy
-		│           ├── customer         //Test customer service
-		│           ├── payment         //Test payment service, etc.
 		│           └── util        //A set of utility functions for RESTful api test
 		│               ├── CategoryDataFactory.groovy         //Return data which is for the test of category service
 		│               ├── CleanupMap.groovy         //A map to clean up mock data which has been pushed to server
@@ -43,33 +52,30 @@ This repo is for RESTful api test
 			│   ├── UpdateOrderHint.json
 			│   ├── UpdateParent.json
 			│   └── UpdateSlug.json
-			├── customer       //Mock data for testing customer service
-			└── payment        //Mock data for testing payment service 
 ```
 
-## 3. How to write test
+## 4. How to write test
 
-### 3.1. Attention please before you start to test
-We use Spock as test framework instead of Junit, so if you want to write test,
-you should have a basic knowledge of Groovy. If you are a Java developer but
-haven't heard about groovy, don't worry--Groovy will feel very familiar to you!
-Here
-is
-[Spock Framework Reference Documentation](http://spockframework.org/spock/docs/1.1-rc-3/index.html)
+### 4.1. Attention please before you start to test
+As mention above, We use Spock as test framework instead of Junit, so if you
+want to write test, you should have a basic knowledge of Groovy. If you are a
+Java developer but haven't heard about groovy, don't worry--Groovy will feel
+very familiar to you!
 
-### 3.2. New Test
+### 4.2. New Test
 The structure of project has been demonstrated above. When you want to test a
 service, firstly, you should add a new package which names after the service you
 want to test in `reactivesw` directory. In the meanwhile, you should add a new
-package with the same name in `resources` directory which is for mock data.
+directory with the same name in `resources` directory which is for mock data.
 
-### 3.3. About mock data
+### 4.3. About mock data
 Suppose now you need to set up some mock data for your test, you should put your
-mock data into `resources` directory as mention above. Then, you have your mock
-data (suppose it is json file) now, you should add a `DataFactory` class to get
-your data. Taking `payment` service test for example, you should add a
+mock data into `resources` directory as mention above. Otherwise, the mock data
+should be json file named after the method you are going to test. Then, you have
+your mock data now, you should add a `DataFactory` class to get your
+data. Taking `payment` service test for example, you should add a
 `PaymentDataFactory` class, and then get a json file with static method, such
-as: 
+as:
 
 ``` groovy
 class PaymentDataFactory {
@@ -84,7 +90,7 @@ class PaymentDataFactory {
 Thus, you could gain `addCreditCard.json` by calling `getValidCreditCardView`
 method
 
-### 3.4. Writing test with api documentation
+### 4.4. Writing test with api documentation
 You have mock data now, so you could start to write test dependent on api
 documentation. Taking `payment` service for example as above, what you should do
 first is to read
@@ -100,12 +106,25 @@ that will fail (for example, with invalid customer id). Otherwise, If a method
 has several parameters, some parameters are optional, others are required, then,
 you should test the different combination of parameters as much as possible
 
-### 3.5. Setup() and cleanup()
+### 4.5. Setup() and cleanup()
 When you have two or more tests that operate on the same or similar sets of
 objects, for convenience, you could use fixture methods, such as `setup()`,
-`cleanup()`, `setupSpec()`, `cleanupSpec()`. For example, if you have pushed
-some mock data to server, you should clean up the mock data after you finish
-testing, so you could put your cleanup method in `cleanupSpec()`. For example:
+`cleanup()`, `setupSpec()`, `cleanupSpec()`. For example, if you want to prepare
+some data for all feature methods, you could set it up in `setupSpec()`, or you
+have pushed some mock data to server, you should clean up the mock data after
+you finish testing, so you could put your cleanup method in `cleanupSpec()`. For
+example:
+
+``` groovy
+       def setupSpec() {
+        category = CategoryDataFactory.getCategory().validCategory1
+        client = RestClientFactory.getJsonClient(CategoryConfig.rootURL)
+        def response = client.post(body: category)
+        id = response.data.id
+        version = response.data.version
+        cleanupMap.addObject(response.data.id, response.data.version)
+    }
+```
 
 ``` groovy
 def cleanupSpec() {
@@ -113,15 +132,16 @@ def cleanupSpec() {
     }
 ```
 
-I have put all mock data needed to clear in `cleanupMap`, and they will be clear
-after calling `cleaupSpec()` method in the end. For more details, you should
+You could put all mock data needed to clear in `cleanupMap`, and they will be
+clear after calling `cleaupSpec()` method in the end. For more details, you
+should
 check
 [Spock Framework Reference Documentation](http://spockframework.org/spock/docs/1.1-rc-3/index.html)
 
-### 3.6. Guide about test
+### 4.6. Guide about test
 For code style and maintaining, there are seveal rules you should follow when you write test.
 
-#### 3.6.1 Method name
+#### 4.6.1 Method name
 By convention and convenience, feature methods are named with String literals
 which should includes test number, description about what you are going to test,
 parameters(optional), and expected result. For example:
@@ -135,11 +155,10 @@ parameters(optional), and expected result. For example:
 so it is supur clear about this test, you could know exactly what this test want
 to do without extra comments
 
-#### 3.6.2 Blocks
-There are six kinds of blocks in Spock framework: `setup`, `when`, `then`,
-`expect`, `cleanup`, and `where`. For each block you use in test, you should
-explicitly express what kind of work does this code block do and correspond to
-your method name. For example:
+#### 4.6.2 Blocks
+There are several kinds of blocks in Spock framework: `given`, `when`, `then`.
+For each block you use in test, you should explicitly express what kind of work
+does this code block do and correspond to your method name. For example:
 
 ``` groovy
     def "Test1: create category with name and slug, should return 200 ok and category view"() {
@@ -159,7 +178,7 @@ your method name. For example:
 
 So, it is clear to demonstrate a test without any other extra comments
 
-## 4. How to run test
+## 5. How to run test
 
 Taking security into account, so you should avoid writing all sensitive
 information into configuration file and should get it from environment
@@ -170,15 +189,6 @@ terminal or put it in `.bashrc` or `.zshrc`
 ```shell
 export TEST_SERVER="your test server ip"
 ```
-
-In this project, we choose gradle as build tool, so if you want to run test, you
-have to install `gradle` first. For OS X, you can just install gradle via
-homebrew
-
-```shell
-brew install gradle
-```
-
 and then run test:
 
 ```shell
