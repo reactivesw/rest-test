@@ -56,19 +56,14 @@ Taking `category` service for example
 
 ## 4. How to write test
 
-### 4.1. Attention please before you start to test
-As mention above, We use Spock as test framework instead of Junit, so if you
-want to write test, you should have a basic knowledge of Groovy. If you are a
-Java developer but haven't heard about groovy, don't worry--Groovy will feel
-very familiar to you!
 
-### 4.2. New Test
+### 4.1. New Test
 The structure of project has been demonstrated above. When you want to test a
 service, firstly, you should add a new package which names after the service you
 want to test in `reactivesw` directory. In the meanwhile, you should add a new
 directory with the same name in `resources` directory which is for mock data.
 
-### 4.3. About mock data
+### 4.2. About mock data
 Suppose now you need to set up some mock data for your test, you should put your
 mock data into `resources` directory as mention above. Otherwise, the mock data
 should be json file named after the method you are going to test. Then, you have
@@ -90,7 +85,7 @@ class PaymentDataFactory {
 Thus, you could gain `addCreditCard.json` by calling `getValidCreditCardView`
 method
 
-### 4.4. Writing test with api documentation
+### 4.3. Writing test with api documentation
 You have mock data now, so you could start to write test dependent on api
 documentation. Taking `payment` service for example as above, what you should do
 first is to read
@@ -106,7 +101,7 @@ that will fail (for example, with invalid customer id). Otherwise, If a method
 has several parameters, some parameters are optional, others are required, then,
 you should test the different combination of parameters as much as possible
 
-### 4.5. Setup() and cleanup()
+### 4.4. Setup() and cleanup()
 When you have two or more tests that operate on the same or similar sets of
 objects, for convenience, you could use fixture methods, such as `setup()`,
 `cleanup()`, `setupSpec()`, `cleanupSpec()`. For example, if you want to prepare
@@ -138,10 +133,10 @@ should
 check
 [Spock Framework Reference Documentation](http://spockframework.org/spock/docs/1.1-rc-3/index.html)
 
-### 4.6. Guide about test
+### 4.5. Guide about test
 For code style and maintaining, there are seveal rules you should follow when you write test.
 
-#### 4.6.1 Method name
+#### 4.5.1 Method name
 By convention and convenience, feature methods are named with String literals
 which should includes test number, description about what you are going to test,
 parameters(optional), and expected result. For example:
@@ -155,7 +150,7 @@ parameters(optional), and expected result. For example:
 so it is supur clear about this test, you could know exactly what this test want
 to do without extra comments
 
-#### 4.6.2 Blocks
+#### 4.5.2 Blocks
 There are several kinds of blocks in Spock framework: `given`, `when`, `then`.
 For each block you use in test, you should explicitly express what kind of work
 does this code block do and correspond to your method name. For example:
