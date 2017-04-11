@@ -11,7 +11,7 @@ import spock.lang.Specification
 /**
  category update test
  */
-class UpdateTest extends Specification {
+class UpdateCategoryTest extends Specification {
     @Shared
     def id
     @Shared

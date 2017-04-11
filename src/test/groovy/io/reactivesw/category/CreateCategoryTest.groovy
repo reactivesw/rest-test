@@ -11,7 +11,7 @@ import spock.lang.Specification
 /**
  * create category test.
  */
-class CreateTest extends Specification {
+class CreateCategoryTest extends Specification {
     @Shared
     CleanupMap cleanupMap = new CleanupMap()
 
