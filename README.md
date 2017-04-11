@@ -1,3 +1,7 @@
+# Restful api test
+## Introduction
+This repo is for RESTful api test
+
 ## Demonstration of project structure
 ``` java
 └── src
@@ -56,15 +60,15 @@ is
 ### New Test
 The structure of project has been demonstrated above. When you want to test a
 service, firstly, you should add a new package which names after the service you
-want to test in *reactivesw* directory. In the meanwhile, you should add a new
-package with the same name in *resources* directory which is for mock data.
+want to test in `reactivesw` directory. In the meanwhile, you should add a new
+package with the same name in `resources` directory which is for mock data.
 
 ### About mock data
 Suppose now you need to set up some mock data for your test, you should put your
-mock data into *resources* directory as mention above. Then, you have your mock
-data (suppose it is json file) now, you should add a *DataFactory* class to get
-your data. Taking *payment* service test for example, you should add a
-*PaymentDataFactory* class, and then get a json file with static method, such
+mock data into `resources` directory as mention above. Then, you have your mock
+data (suppose it is json file) now, you should add a `DataFactory` class to get
+your data. Taking `payment` service test for example, you should add a
+`PaymentDataFactory` class, and then get a json file with static method, such
 as: 
 
 ``` groovy
@@ -77,12 +81,12 @@ class PaymentDataFactory {
 }
 ```
 
-Thus, you could gain *addCreditCard.json* by calling *getValidCreditCardView*
+Thus, you could gain `addCreditCard.json` by calling `getValidCreditCardView`
 method
 
 ### Writing test with api documentation
 You have mock data now, so you could start to write test dependent on api
-documentation. Taking *payment* service for example as above, what you should do
+documentation. Taking `payment` service for example as above, what you should do
 first is to read
 the
 [api documentation of payment service](https://github.com/reactivesw/payment/blob/master/docs/api.md). After
@@ -98,10 +102,10 @@ you should test the different combination of parameters as much as possible
 
 ### Setup() and cleanup()
 When you have two or more tests that operate on the same or similar sets of
-objects, for convenience, you could use fixture methods, such as *setup()*,
-*cleanup()*, *setupSpec()*, *cleanupSpec()*. For example, if you have pushed
+objects, for convenience, you could use fixture methods, such as `setup()`,
+`cleanup()`, `setupSpec()`, `cleanupSpec()`. For example, if you have pushed
 some mock data to server, you should clean up the mock data after you finish
-testing, so you could put your cleanup method in *cleanupSpec()*. For example:
+testing, so you could put your cleanup method in `cleanupSpec()`. For example:
 
 ``` groovy
 def cleanupSpec() {
@@ -109,8 +113,8 @@ def cleanupSpec() {
     }
 ```
 
-I have put all mock data needed to clear in *cleanupMap*, and they will be clear
-after calling *cleaupSpec()* method in the end. For more details, you should
+I have put all mock data needed to clear in `cleanupMap`, and they will be clear
+after calling `cleaupSpec()` method in the end. For more details, you should
 check
 [Spock Framework Reference Documentation](http://spockframework.org/spock/docs/1.1-rc-3/index.html)
 
@@ -120,7 +124,7 @@ For code style and maintaining, there are seveal rules you should follow when yo
 #### Method name
 By convention and convenience, feature methods are named with String literals
 which should includes test number, description about what you are going to test,
-arameters(optional), and expected result. For example:
+parameters(optional), and expected result. For example:
 
 ``` groovy
     def "Test1: create category with name and slug, should return 200 ok and category view"() {
@@ -132,8 +136,8 @@ so it is supur clear about this test, you could know exactly what this test want
 to do without extra comments
 
 #### Blocks
-There are six kinds of blocks in Spock framework: *setup*, *when*, *then*,
-*expect*, *cleanup*, and *where*. For each block you use in test, you should
+There are six kinds of blocks in Spock framework: `setup`, `when`, `then`,
+`expect`, `cleanup`, and `where`. For each block you use in test, you should
 explicitly express what kind of work does this code block do and correspond to
 your method name. For example:
 
