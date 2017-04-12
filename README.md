@@ -93,7 +93,7 @@ the
 [api documentation of payment service](https://github.com/reactivesw/payment/blob/master/docs/api.md). After
 glancing at api documentation, you should start to test the method defined in
 api documentation. As for a regular method, you should write both "pass" and
-"fail" util test. As the api doc shows below, ![api doc](./images/api.png)
+"fail" util test. As the api doc shows below, ![api doc](./docs/resources/api.png)
 
 for method which gets all credit cards by customer id, you should write at least
 a test could get credit cards with customer id successfully, and another test
