@@ -11,15 +11,14 @@ import spock.lang.Specification
 class SignInTest extends Specification {
     def client = RestClientFactory.getClient(CustomerAuthenticationConfig.ROOTURL)
 
-    def "test1: sign in with email and password should return customerView and the status of response should be 200"() {
-        given: "prepare data that customer needs to sign in"
+    def "Test1: sign in with email and password, should return 200 ok and customer view"() {
+        given: "prepare data "
         def signinInformation = CustomerAuthenticationDataFactory.getSignin().validCustomer
-        println CustomerAuthenticationConfig.ROOTURL
 
         when: "call signin api to sign in"
         def response = client.post(path: "signin", body: signinInformation, requestContentType: "application/json")
 
-        then: "response status should be 200,and email should be equal to given signinInformation"
+        then: "should return 200 and customer view"
         with(response) {
             status == 200
             data.customerView.email == signinInformation.email
@@ -27,25 +26,25 @@ class SignInTest extends Specification {
 
     }
 
-    def "test 2: sign in with customer that haven't sign up,response status should return 404"() {
-        given: "prepare the invalid data"
+    def "Test2: sign in with customer that haven't sign up, should return 404 not found"() {
+        given: "prepare data"
         def invalidCustomer = CustomerAuthenticationDataFactory.getSignin().invalidCustomer
 
         when: "call signin api to sign in"
         def response = client.post(path: "signin", body: invalidCustomer, requestContentType: "application/json")
 
-        then: "response status should be 404,and error code should be 10001"
+        then: "should return 404 not found"
         response == 404
     }
 
-    def "test3: sign in with wrong password,response should be 401 "() {
-        given: "prepare the email and wrong password"
+    def "Test3: sign in with wrong password, should return 401 unauthorized"() {
+        given: "prepare data"
         def invalidPassword = CustomerAuthenticationDataFactory.getSignin().invalidPassword
 
         when: "call signin api to sign in"
         def response = client.post(path: "signin", body: invalidPassword, requestContentType: "application/json")
 
-        then: "response status should be 401"
+        then: "should return 401 unauthorized"
         response == 401
     }
 }

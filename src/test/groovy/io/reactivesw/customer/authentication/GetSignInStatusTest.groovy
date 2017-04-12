@@ -11,7 +11,7 @@ import spock.lang.Specification
 class GetSignInStatusTest extends Specification {
     def client = RestClientFactory.getClient(CustomerAuthenticationConfig.ROOTURL)
 
-    def "test1: get sign in status with token,should return customer id"() {
+    def "Test1: get sign in status with token, should return customer id and 200 ok"() {
         given: "prepare data"
         def validCustomer = CustomerAuthenticationDataFactory.getSignin().validCustomer
         def res = client.post(path: "signin", body: validCustomer, requestContentType: "application/json")
@@ -20,14 +20,14 @@ class GetSignInStatusTest extends Specification {
         when: "call get sign in status api"
         def response = client.get(path: "status", query: token)
 
-        then: "response status should be 200 and response should be equal to customer id"
+        then: "response status should be 200, response should be equal to customer id"
         with(response) {
             status == 200
             data.str == res.data.customerView.id
         }
     }
 
-    def "test2: get sign in status with invalid token,response status should be 400"() {
+    def "Test2: get sign in status with invalid token, should return 401 unauthorized"() {
         given: "prepare data"
         def invalidToken = "invalid_token"
         def token = ['token': invalidToken]
@@ -35,19 +35,19 @@ class GetSignInStatusTest extends Specification {
         when: "call get sign in status api"
         def response = client.get(path: "status", query: token, requestContentType: "application/json")
 
-        then: "response status should be 400"
+        then: "should return 401 unauthorized"
         response == 401
     }
 
-    def "test3: get sign in status with anonymous token,response status should return 200"() {
-        given: "prepare anonymous token"
+    def "Test3: get sign in status with anonymous token, should return 200 ok"() {
+        given: "prepare data"
         def res = client.get(path: "anonymous")
         def anonymousToken = ['token': res.data.str]
 
         when: "call get sign in status api"
         def response = client.get(path: "status", query: anonymousToken, requestContentType: "application/json")
 
-        then: "response status should be 200"
+        then: "should return 200 ok"
         response.status == 200
     }
 }

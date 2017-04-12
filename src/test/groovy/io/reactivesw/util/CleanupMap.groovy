@@ -1,7 +1,4 @@
 package io.reactivesw.util
-
-import sun.java2d.opengl.OGLContext
-
 /**
  * Created by Davis on 17/3/9.
  */
@@ -18,5 +15,9 @@ class CleanupMap {
 
     public Map getAllObjects() {
         return this.objects
+    }
+
+    public boolean isEmpty() {
+        return objects.isEmpty()
     }
 }

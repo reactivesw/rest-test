@@ -5,19 +5,18 @@ import io.reactivesw.util.RestClientFactory
 import spock.lang.Specification
 
 /**
- * Created by Davis on 17/3/9.
+ * check service health status.
  */
 class HealthCheckTest extends Specification {
-    def "Health Check should return 200 status code"() {
-        given:
+    def "Test1: health check should return 200 ok"() {
+        given: "prepare data"
+        def client = RestClientFactory.getClient(CategoryConfig.rootURL)
+        def path = [path: 'health']
 
-        def primerEndpoint = RestClientFactory.getClient(CategoryConfig.rootURL)
-        def path = [path : 'health']
+        when: "call api"
+        def response = client.get(path)
 
-        when:
-        def response = primerEndpoint.get(path)
-
-        then:
+        then: "should return 200 ok"
         response.status == 200
     }
 }

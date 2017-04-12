@@ -1,6 +1,40 @@
 {
-  "name": {
-    "en": "category1"
+  "validCategory1": {
+    "name": {
+      "en": "category4"
+    },
+    "slug": "category-slug42"
   },
-  "slug": "category-slug1"
+  "validCategory2": {
+    "name": {
+      "en": "sub-category"
+    },
+    "slug": "sub-category-slug"
+  },
+  "includeInvalidCharCategory": {
+    "name": {
+      "en": "category1"
+    },
+    "slug": "%$$"
+  },
+  "lessThanMinimumSizeCategory": {
+    "name": {
+      "en": "category1"
+    },
+    "slug": "a"
+  },
+  "greatThanMaximumSizeCategory": {
+    "name": {
+      "en": "category1"
+    },
+    "slug": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "withoutSlugCategory": {
+    "name": {
+      "en": "category1"
+    }
+  },
+  "withoutNameCategory": {
+    "slug": "category1"
+  }
 }

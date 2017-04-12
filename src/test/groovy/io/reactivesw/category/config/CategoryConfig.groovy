@@ -3,7 +3,7 @@ package io.reactivesw.category.config
 import io.reactivesw.config.GlobalConfig
 
 /**
- * Created by Davis on 17/3/9.
+ * configuration of category service
  */
 class CategoryConfig {
     static final String path = "categories"
