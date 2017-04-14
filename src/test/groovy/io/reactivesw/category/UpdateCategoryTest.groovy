@@ -199,6 +199,36 @@ class UpdateCategoryTest extends Specification {
         response.data.metaTitle == setMetaTitle.actions[0].metaTitle
     }
 
+    def "Test13: update parent with invalid parent, should return 404 not found"() {
+        given: "prepare data"
+        def subCategory = CategoryDataFactory.getCategory().validCategory3
+        def subCategoryResponse = client.post(body: subCategory)
+        def subCategoryId = subCategoryResponse.data.id
+        def subCategoryVersion = subCategoryResponse.data.version
+        def setParent = CategoryDataFactory.getSetParent()
+        setParent['version'] = subCategoryVersion
+        setParent.actions[0].parent.id = "this is an invalid parent id"
+
+        when: "call api to update parent"
+        def response = client.put([path: subCategoryId, body: setParent, requestContentType: "application/json"])
+
+        then: "should return 404 not found"
+        cleanupMap.addObject(subCategoryId, subCategoryVersion)
+        response == 404
+
+    }
+
+    def "Test14: update category slug with wrong version, should return 409 conflict"() {
+        given: "prepare data"
+        def setSlug = CategoryDataFactory.getSetSlugAction()
+        setSlug['version'] = 42342342
+
+        when: "call api to update category slug"
+        def response = client.put([path: id, body: setSlug])
+
+        then: "should return 409 conflict"
+        response == 409
+    }
 
     def cleanupSpec() {
         CleanupUtil.cleanup(CategoryConfig.rootURL, cleanupMap)
