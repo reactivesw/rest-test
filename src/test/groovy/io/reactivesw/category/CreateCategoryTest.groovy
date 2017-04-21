@@ -48,7 +48,6 @@ class CreateCategoryTest extends Specification {
         category.metaDescription == newCategory.metaDescription
         category.metaKeywords == newCategory.metaKeywords
         category.metaTitle == newCategory.metaTitle
-        category.orderHint == newCategory.orderHint
 
         cleanupMap.addObject(response.data.id, response.data.version)
     }

@@ -199,8 +199,53 @@ class UpdateCategoryTest extends Specification {
         response.data.metaTitle == setMetaTitle.actions[0].metaTitle
     }
 
+    def "Test13: update order hint, should return 200 ok and category view"() {
+        given: "prepare data"
+        def setOrderHint = CategoryDataFactory.getSetOrderHint()
+        def previousOrderHint = setOrderHint.actions[0].previousOrderHint as Double
+        def nextOrderHint = setOrderHint.actions[0].nextOrderHint as Double
+        def medianOfTwoOrderHint = ((previousOrderHint + nextOrderHint) / 2).toString()
+        setOrderHint['version'] = cleanupMap.allObjects[id]
+
+
+        when: "call api to update order hint"
+        def response = client.put([path: id, body: setOrderHint])
+
+        then: "should return 200 ok and category view, new order hint should be average of two given order hint"
+        cleanupMap.addObject(response.data.id, response.data.version)
+        response.status == 200
+        response.data.orderHint == medianOfTwoOrderHint
+    }
+
+    def "Test14: update order hint with previous order hint and an empty next order hint, should return 200 ok and category view"() {
+        given: "prepare data"
+        def setOrderHint = CategoryDataFactory.getSetOrderHint()
+        setOrderHint['nextOrderHint'] = ""
+        setOrderHint['version'] = cleanupMap.allObjects[id]
+
+        when: "call api to update order hint"
+        def response = client.put([path: id, body: setOrderHint])
+
+        then: "should return 200 ok and category view with a regenerated order hint"
+        cleanupMap.addObject(response.data.id, response.data.version)
+        response.status == 200
+    }
+
+    def "Test15: update order hint with invalid previous order hint, should return 400 bad request"() {
+        given: "prepare data"
+        def setOrderHint = CategoryDataFactory.getInvalidUpdateOrderHint()
+        setOrderHint['version'] = cleanupMap.allObjects[id]
+
+        when: "call api to update order hint"
+        def response = client.put([path: id, body: setOrderHint])
+
+        then: "should return 400 bad request"
+        response == 400
+    }
 
     def cleanupSpec() {
-        CleanupUtil.cleanup(CategoryConfig.rootURL, cleanupMap)
+        if (!cleanupMap.isEmpty()) {
+            CleanupUtil.cleanup(CategoryConfig.rootURL, cleanupMap)
+        }
     }
 }

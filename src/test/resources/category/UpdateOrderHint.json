@@ -3,7 +3,8 @@
   "actions": [
     {
       "action": "setOrderHint",
-      "orderHint": "Update orderHint Test"
+      "previousOrderHint": "0.1492574236347",
+      "nextOrderHint": "0.1492668907744"
     }
   ]
 }
