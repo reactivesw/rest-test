@@ -33,8 +33,8 @@ class GetProductTypeTest extends Specification {
         then: "should return 200 ok and productTypeView"
         with(response) {
             status == 200
-            data.name == response.name
-            data.description == response.description
+            data.name == productType.name
+            data.description == productType.description
         }
     }
 
@@ -44,7 +44,7 @@ class GetProductTypeTest extends Specification {
 
         then: "should return 200 ok and productTypeView count should be more than 1"
         response.status == 200
-        response.data.count >= 1
+        response.data.total >= 1
 
     }
 

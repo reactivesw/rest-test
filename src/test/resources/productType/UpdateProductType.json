@@ -1,0 +1,104 @@
+{
+    "validSetName": {
+        "version": 1,
+        "actions": [{
+            "action": "setName",
+            "name": "Updated product type name"
+        }]
+    },
+    "invalidSetName": {
+        "version": 1,
+        "actions": [{
+            "action": "setName",
+            "name": ""
+        }]
+    },
+    "validSetDescription": {
+        "version": 1,
+        "actions": [{
+            "action": "setDescription",
+            "description": "Updated product type descriptions"
+        }]
+    },
+    "invalidSetDescription": {
+        "version": 1,
+        "actions": [{
+            "action": "setDescription",
+            "description": ""
+        }]
+    },
+    "validAddAttributeDefinition": {
+        "version": 1,
+        "actions": [{
+            "action": "addAttributeDefinition",
+            "attribute": {
+                "type": {
+                    "name": "text"
+                },
+                "name": "color",
+                "label": {
+                    "en": "color",
+                    "zh_cn": "颜色"
+                },
+                "isRequired": true,
+                "attributeConstraint": "CombinationUnique",
+                "isSearchable": true,
+                "inputHint": "SingleLine"
+            }
+        }]
+    },
+    "invalidAddAttributeDefinition": {
+        "version": 1,
+        "actions": [{
+            "action": "addAttributeDefinition",
+            "attribute": {
+                "type": {},
+                "name": "color",
+                "label": {
+                    "en": "color",
+                    "zh_cn": "颜色"
+                },
+                "isRequired": true,
+                "attributeConstraint": "combinationUnique",
+                "isSearchable": true,
+                "inputHint": "singleLine"
+            }
+        }]
+    },
+    "validRemoveAttributeDefinition": {
+        "version": 1,
+        "actions": [{
+            "action": "removeAttributeDefinition",
+            "name": "color"
+        }]
+    },
+    "invalidRemoveAttributeDefinition": {
+        "version": 1,
+        "actions": [{
+            "action": "removeAttributeDefinition",
+            "name": "not-exist-name"
+        }]
+    },
+    "validSetAttributeLabel": {
+        "version": 1,
+        "actions": [{
+            "action": "setLabel",
+            "attributeName": "color",
+            "label": {
+                "en": "test-color",
+                "zh_cn": "颜色"
+            }
+        }]
+    },
+    "invalidSetAttributeLabel": {
+        "version": 1,
+        "actions": [{
+            "action": "setLabel",
+            "attributeName": "not-exist-attributeName",
+            "label": {
+                "en": "test-color",
+                "zh_cn": "颜色"
+            }
+        }]
+    }
+}

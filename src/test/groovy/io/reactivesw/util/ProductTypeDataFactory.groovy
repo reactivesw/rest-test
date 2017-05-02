@@ -6,4 +6,8 @@ class ProductTypeDataFactory {
     public static def getCreateProductType() {
         return slurper.parse(new FileReader('src/test/resources/productType/CreateProductType.json'))
     }
+
+    public static def getUpdateProductType() {
+        return slurper.parse(new FileReader('src/test/resources/productType/UpdateProductType.json'))
+    }
 }
