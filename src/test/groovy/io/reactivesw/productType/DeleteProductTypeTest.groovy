@@ -32,7 +32,7 @@ class DeleteProductTypeTest extends Specification {
     def "Test2: delete with invalid id, should return 404 not found"() {
         given: "prepare data"
         def invalidId = "this-is-a-invalid-id"
-        def parameter = ['version', 0]
+        def parameter = ['version': 0]
 
         when: "call function to delete product type"
         def response = client.delete(path: invalidId, query: parameter)
@@ -44,7 +44,7 @@ class DeleteProductTypeTest extends Specification {
     def "Test3: delete with wrong version, should return 409 conflict"() {
         given: "prepare data"
         def productType = ProductTypeDataFactory.getCreateProductType().validProductType1
-        def createResponse = client.post(body: productType)
+        def createResponse = client.post(body: productType, requestContentType: "application/json")
         def id = createResponse.data.id
         def parameter = ['version': 1214124]
         cleanupMap.addObject(createResponse.data.id, createResponse.data.version)

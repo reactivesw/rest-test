@@ -1,5 +1,3 @@
-package io.reactivesw.productType
-
 import io.reactivesw.config.ProductTypeConfig
 import io.reactivesw.util.RestClientFactory
 import spock.lang.Specification

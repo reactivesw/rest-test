@@ -100,5 +100,140 @@
                 "zh_cn": "颜色"
             }
         }]
+    },
+    "validSetAttributeInputTip": {
+        "version": 1,
+        "actions": [{
+            "action": "setInputTip",
+            "attributeName": "color",
+            "inputTip": {
+                "en": "input tip about color",
+                "zh_cn": "颜色"
+            }
+        }]
+    },
+    "invalidSetAttributeInputTip": {
+        "version": 1,
+        "actions": [{
+            "action": "setInputTip",
+            "attributeName": "not-exist-attributeName",
+            "inputTip": {
+                "en": "input tip about color",
+                "zh_cn": "颜色"
+            }
+        }]
+    },
+    "validAddPlainEnumValue": {
+        "version": 1,
+        "actions": [{
+            "action": "addPlainEnumValue",
+            "attributeName": "color",
+            "value": ""
+        }]
+    },
+    "validSetSearchable": {
+        "version": 1,
+        "actions": [{
+            "action": "setIsSearchable",
+            "attributeName": "color",
+            "setSearchable": true
+        }]
+    },
+    "invalidSetSearchable": {
+        "version": 1,
+        "actions": [{
+            "action": "setIsSearchable",
+            "attributeName": "color",
+            "setSearchable": "invalidAttribute"
+        }]
+    },
+    "validAddPlainEnumValue": {
+        "version": 1,
+        "actions": [{
+            "action": "addPlainEnumValue",
+            "attributeName": "season-style",
+            "value": {
+                "key": "plainEnumValue key",
+                "label": "plainEnumValue label"
+            }
+        }]
+    },
+    "validAddLocalizedEnumValue": {
+        "version": 1,
+        "actions": [{
+            "action": "addLocalizedEnumValue",
+            "attributeName": "style",
+            "value": {
+                "key": "localizedEnumValue key",
+                "label": {
+                    "en": "localizedEnumValue"
+                }
+            }
+        }]
+    },
+    "validSetAttributeOrder": {
+        "version": 1,
+        "actions": [{
+            "action": "setAttributeOrder",
+            "attributes": []
+        }]
+    },
+    "validSetPlainEnumValueLabel": {
+        "version": 1,
+        "actions": [{
+            "action": "setPlainEnumValueLabel",
+            "attributeName": "season-style",
+            "newValue": ""
+        }]
+    },
+    "validSetPlainEnumValueOrder": {
+        "version": 1,
+        "actions": [{
+            "action": "setPlainEnumValueOrder",
+            "attributeName": "season-style",
+            "values": []
+        }]
+    },
+    "validSetLocalizedEnumValueOrder": {
+        "version": 1,
+        "actions": [{
+            "action": "setLocalizedEnumValueOrder",
+            "attributeName": "style",
+            "values": []
+        }]
+    },
+    "validSetPlainEnumValueLabel": {
+        "version": 1,
+        "actions": [{
+            "action": "setPlainEnumValueLabel",
+            "attributeName": "season-style",
+            "newValue": {
+                "key": "new-enum-key",
+                "label": "new-enum-value"
+            }
+        }]
+    },
+    "validSetLocalizedEnumValueLabel": {
+        "version": 1,
+        "actions": [{
+            "action": "setLocalizedEnumValueLabel",
+            "attributeName": "style",
+            "newValue": {
+                "key": "new-lenum-key",
+                "label": {
+                    "en": "new-lenum-label"
+                }
+            }
+        }]
+    },
+    "multiUpdate": {
+        "version": 1,
+        "actions": [{
+            "action": "setName",
+            "name": "Updated product type name"
+        }, {
+            "action": "setDescription",
+            "description": "Updated product type descriptions"
+        }]
     }
 }
