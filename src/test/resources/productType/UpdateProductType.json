@@ -136,7 +136,7 @@
         "actions": [{
             "action": "setIsSearchable",
             "attributeName": "color",
-            "setSearchable": true
+            "isSearchable": true
         }]
     },
     "invalidSetSearchable": {
@@ -144,7 +144,7 @@
         "actions": [{
             "action": "setIsSearchable",
             "attributeName": "color",
-            "setSearchable": "invalidAttribute"
+            "isSearchable": "invalidAttribute"
         }]
     },
     "validAddPlainEnumValue": {

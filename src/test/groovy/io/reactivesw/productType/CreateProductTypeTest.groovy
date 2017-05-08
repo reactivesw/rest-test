@@ -78,18 +78,7 @@ class CreateProductTypeTest extends Specification {
 
     }
 
-    def "Test6: create deprecated product type, should return 409 conflict."() {
-        given: "prepare data and call function to create product type"
-        def productType = ProductTypeDataFactory.getCreateProductType().validProductType1
-        def firstResponse = client.post(body: productType, requestContentType: "application/json")
-        cleanupMap.addObject(firstResponse.data.id, firstResponse.data.version)
 
-        when: "call function to create product type again"
-        def secondReponse = client.post(body: productType, requestContentType: "application/json")
-
-        then: "should return 409 conflict"
-        secondReponse == 409
-    }
 
     def cleanupSpec() {
         if (!cleanupMap.isEmpty()) {

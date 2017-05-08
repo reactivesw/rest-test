@@ -144,19 +144,7 @@ class UpdateProductTypeTest extends Specification {
         response.status == 200
     }
 
-//    def "Test10: update product type with not-exist attribute label, should return 404 not found"() {
-//        given: "prepare data"
-//        def invalidSetAttributeLabel = ProductTypeDataFactory.getUpdateProductType().invalidSetAttributeLabel
-//        invalidSetAttributeLabel['version'] = cleanupMap.allObjects[id]
-//
-//        when: "call function to set attribute label"
-//        def response = client.put([path: id, body: invalidSetAttributeLabel, requestContentType: "application/json"])
-//
-//        then: "should return 404 not found"
-//        response == 404
-//    }
-
-    def "Test11: update product type with valid attribute inputTip, should return 200 and productTypeView"() {
+    def "Test10: update product type with valid attribute inputTip, should return 200 and productTypeView"() {
         given: "prepare data"
         def validSetAttributeInputTip = ProductTypeDataFactory.getUpdateProductType().validSetAttributeInputTip
         validSetAttributeInputTip['version'] = cleanupMap.allObjects[id]
@@ -171,19 +159,7 @@ class UpdateProductTypeTest extends Specification {
         }
     }
 
-//    def "Test12: update product type with not exist attribute, should return 404 not found"() {
-//        given: "prepare data"
-//        def invalidSetAttributeInputTip = ProductTypeDataFactory.getUpdateProductType().invalidSetAttributeInputTip
-//        invalidSetAttributeInputTip['version'] = cleanupMap.allObjects[id]
-//
-//        when: "call function to set attribute inputTip"
-//        def response = client.put([path: id, body: invalidSetAttributeInputTip, requestContentType: "application/json"])
-//
-//        then: "should return 404"
-//        response == 404
-//    }
-
-    def "Test13: update product type with attribute searchable, should return 200 ok and productTypeView"() {
+    def "Test11: update product type with attribute searchable, should return 200 ok and productTypeView"() {
         given: "prepare data"
         def setSearchable = ProductTypeDataFactory.getUpdateProductType().validSetSearchable
         setSearchable['version'] = cleanupMap.allObjects[id]
@@ -193,10 +169,12 @@ class UpdateProductTypeTest extends Specification {
 
         then: "should return 200 ok and productTypeView"
         cleanupMap.addObject(response.data.id, response.data.version)
-        response == 200
+        with(response) {
+            status == 200
+        }
     }
 
-    def "Test14: update product type with invalid attribute searchable, should return 400 bad request"() {
+    def "Test12: update product type with invalid attribute searchable, should return 400 bad request"() {
         given: "prepare data"
         def invalidSetSearchable = ProductTypeDataFactory.getUpdateProductType().invalidSetSearchable
         invalidSetSearchable['version'] = cleanupMap.allObjects[id]
@@ -208,7 +186,7 @@ class UpdateProductTypeTest extends Specification {
         response == 400
     }
 
-    def "Test15: update product type with plain enum value, should return 200 ok and productTypeView"() {
+    def "Test13: update product type with plain enum value, should return 200 ok and productTypeView"() {
         given: "prepare data"
         def validSetSearchable = ProductTypeDataFactory.getUpdateProductType().validAddPlainEnumValue
         validSetSearchable['version'] = cleanupMap.allObjects[id]
@@ -222,7 +200,7 @@ class UpdateProductTypeTest extends Specification {
 
     }
 
-    def "Test16: update attribute order of product type, should return 200 ok and productTypeView"() {
+    def "Test14: update attribute order of product type, should return 200 ok and productTypeView"() {
         given: "prepare data"
         def validSetAttributeOrder = ProductTypeDataFactory.updateProductType.validSetAttributeOrder
         def originalProductType = client.get(path: id)
@@ -235,12 +213,13 @@ class UpdateProductTypeTest extends Specification {
         def response = client.put([path: id, body: validSetAttributeOrder, requestContentType: "application/json"])
 
         then: "should return 200 ok and productTypeView"
+        println response
         cleanupMap.addObject(response.data.id, response.data.version)
         attributes == response.data.attributes
         response.status == 200
     }
 
-    def "Test17: update product type with adding LocalizedEnumValue, should return 200 ok and productTypeView"() {
+    def "Test15: update product type with adding LocalizedEnumValue, should return 200 ok and productTypeView"() {
         given: "prepare data"
         def validAddLocalizedEnumValue = ProductTypeDataFactory.updateProductType.validAddLocalizedEnumValue
         validAddLocalizedEnumValue['version'] = cleanupMap.allObjects[id]
@@ -253,7 +232,7 @@ class UpdateProductTypeTest extends Specification {
         response.status == 200
     }
 
-    def "Test18: update plain enum value order of product type, should return 200 ok and productTypeView"() {
+    def "Test16: update plain enum value order of product type, should return 200 ok and productTypeView"() {
         given: "prepare data"
         def createProductType = ProductTypeDataFactory.getCreateProductType().validProductType2
         def createResponse = client.post(body: createProductType, requestContentType: "application/json")
@@ -274,7 +253,7 @@ class UpdateProductTypeTest extends Specification {
         values == response.data.attributes[2].type.values
     }
 
-    def "Test19: update localized enum value order of product type, should return 200 ok and productTypeView"() {
+    def "Test17: update localized enum value order of product type, should return 200 ok and productTypeView"() {
         given: "prepare data"
         def validSetLocalizedEnumValueOrder = ProductTypeDataFactory.updateProductType.validSetLocalizedEnumValueOrder
         def originalProductType = client.get(path: id)
@@ -292,7 +271,7 @@ class UpdateProductTypeTest extends Specification {
         values == response.data.attributes[3].type.values
     }
 
-    def "Test20: update plain enum value label of product type, should return 200 ok and productTypeView"() {
+    def "Test18: update plain enum value label of product type, should return 200 ok and productTypeView"() {
         given: "prepare data"
         def validSetPlainEnumValueLabel = ProductTypeDataFactory.updateProductType.validSetPlainEnumValueLabel
         validSetPlainEnumValueLabel['version'] = cleanupMap.allObjects[id]
@@ -305,7 +284,7 @@ class UpdateProductTypeTest extends Specification {
         response.status == 200
     }
 
-    def "Test21: update localized enum value label, should return 200 ok and productTypeView"() {
+    def "Test19: update localized enum value label, should return 200 ok and productTypeView"() {
         given: "prepare data"
         def validSetLocalizedEnumValueLabel = ProductTypeDataFactory.updateProductType.validSetLocalizedEnumValueLabel
         validSetLocalizedEnumValueLabel['version'] = cleanupMap.allObjects[id]
@@ -318,7 +297,7 @@ class UpdateProductTypeTest extends Specification {
         response.status == 200
     }
 
-    def "Test22: update product type with multiple actions, should return 200 ok and productTypeView"() {
+    def "Test20: update product type with multiple actions, should return 200 ok and productTypeView"() {
         given: "prepare data"
         def multiUpdate = ProductTypeDataFactory.updateProductType.multiUpdate
         multiUpdate['version'] = cleanupMap.allObjects[id]
