@@ -11,6 +11,12 @@
     },
     "slug": "sub-category-slug"
   },
+  "validCategory3": {
+    "name": {
+      "en": "sub-category-2"
+    },
+    "slug": "sub-category-slug-2"
+  },
   "includeInvalidCharCategory": {
     "name": {
       "en": "category1"
