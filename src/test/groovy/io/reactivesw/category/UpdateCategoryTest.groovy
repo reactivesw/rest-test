@@ -199,7 +199,38 @@ class UpdateCategoryTest extends Specification {
         response.data.metaTitle == setMetaTitle.actions[0].metaTitle
     }
 
-    def "Test13: update order hint, should return 200 ok and category view"() {
+
+    def "Test13: update parent with invalid parent, should return 404 not found"() {
+        given: "prepare data"
+        def subCategory = CategoryDataFactory.getCategory().validCategory3
+        def subCategoryResponse = client.post(body: subCategory)
+        def subCategoryId = subCategoryResponse.data.id
+        def subCategoryVersion = subCategoryResponse.data.version
+        def setParent = CategoryDataFactory.getSetParent()
+        setParent['version'] = subCategoryVersion
+        setParent.actions[0].parent.id = "this is an invalid parent id"
+
+        when: "call api to update parent"
+        def response = client.put([path: subCategoryId, body: setParent, requestContentType: "application/json"])
+
+        then: "should return 404 not found"
+        cleanupMap.addObject(subCategoryId, subCategoryVersion)
+        response == 404
+
+    }
+
+    def "Test14: update category slug with wrong version, should return 409 conflict"() {
+        given: "prepare data"
+        def setSlug = CategoryDataFactory.getSetSlugAction()
+        setSlug['version'] = 42342342
+
+        when: "call api to update category slug"
+        def response = client.put([path: id, body: setSlug])
+
+        then: "should return 409 conflict"
+        response == 409
+
+    def "Test15: update order hint, should return 200 ok and category view"() {
         given: "prepare data"
         def setOrderHint = CategoryDataFactory.getSetOrderHint()
         def previousOrderHint = setOrderHint.actions[0].previousOrderHint as Double
@@ -217,7 +248,7 @@ class UpdateCategoryTest extends Specification {
         response.data.orderHint == medianOfTwoOrderHint
     }
 
-    def "Test14: update order hint with previous order hint and an empty next order hint, should return 200 ok and category view"() {
+    def "Test16: update order hint with previous order hint and an empty next order hint, should return 200 ok and category view"() {
         given: "prepare data"
         def setOrderHint = CategoryDataFactory.getSetOrderHint()
         setOrderHint['nextOrderHint'] = ""
@@ -231,7 +262,7 @@ class UpdateCategoryTest extends Specification {
         response.status == 200
     }
 
-    def "Test15: update order hint with invalid previous order hint, should return 400 bad request"() {
+    def "Test17: update order hint with invalid previous order hint, should return 400 bad request"() {
         given: "prepare data"
         def setOrderHint = CategoryDataFactory.getInvalidUpdateOrderHint()
         setOrderHint['version'] = cleanupMap.allObjects[id]
@@ -241,6 +272,7 @@ class UpdateCategoryTest extends Specification {
 
         then: "should return 400 bad request"
         response == 400
+
     }
 
     def cleanupSpec() {

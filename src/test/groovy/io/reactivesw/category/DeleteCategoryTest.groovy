@@ -44,7 +44,7 @@ class DeleteCategoryTest extends Specification {
         when: "call api to delete category with wrong id"
         def response = client.delete(path: wrongId, query: version)
 
-        then: "should return 404 not "
+        then: "should return 404 not found"
         response == 404
     }
 
