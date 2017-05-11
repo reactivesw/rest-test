@@ -58,4 +58,8 @@ class CategoryDataFactory {
     public static def getSetParent() {
         return slurper.parse(new FileReader('src/test/resources/category/UpdateParent.json'))
     }
+
+    public static def getInvalidUpdateOrderHint() {
+        return slurper.parse(new FileReader('src/test/resources/category/InvalidUpdateOrderHint.json'))
+    }
 }
