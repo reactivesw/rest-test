@@ -1,0 +1,10 @@
+{
+  "name": {
+    "en": "test_category",
+    "zh_cn": "测试目录"
+  },
+  "description": {
+    "en": "category named as test category"
+  },
+  "slug": "test_category"
+}
