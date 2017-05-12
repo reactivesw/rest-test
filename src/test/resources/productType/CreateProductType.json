@@ -1,0 +1,247 @@
+{
+    "validProductType1": {
+        "name": "clothes",
+        "description": "test description",
+        "attributes": [{
+                "type": {
+                    "name": "number"
+                },
+                "name": "size",
+                "label": {
+                    "en": "size",
+                    "zh_cn": "尺寸"
+                },
+                "isRequired": true,
+                "attributeConstraint": "CombinationUnique",
+                "isSearchable": true,
+                "inputHint": "SingleLine"
+            },
+            {
+                "type": {
+                    "name": "text"
+                },
+                "name": "color",
+                "label": {
+                    "en": "color",
+                    "zh_cn": "颜色"
+                },
+                "isRequired": true,
+                "attributeConstraint": "CombinationUnique",
+                "isSearchable": true,
+                "inputHint": "SingleLine"
+            },
+            {
+                "type": {
+                    "name": "enum",
+                    "values": [{
+                        "key": "enum-key",
+                        "label": "enum-value"
+                    }]
+                },
+                "name": "season-style",
+                "label": {
+                    "en": "season-style",
+                    "zh_cn": "季度款式"
+                },
+                "isRequired": true,
+                "attributeConstraint": "CombinationUnique",
+                "isSearchable": true,
+                "inputHint": "SingleLine"
+            }, {
+                "type": {
+                    "name": "lenum",
+                    "values": [{
+                        "key": "lenum-key",
+                        "label": {
+                            "en": "leunm-label-content"
+                        }
+                    }]
+                },
+                "name": "style",
+                "label": {
+                    "en": "style",
+                    "zh_cn": "款式"
+                },
+                "isRequired": true,
+                "attributeConstraint": "CombinationUnique",
+                "isSearchable": true,
+                "inputHint": "SingleLine"
+            }
+        ]
+    },
+
+    "validProductType2": {
+        "name": "pant",
+        "description": "test description",
+        "attributes": [{
+                "type": {
+                    "name": "number"
+                },
+                "name": "size",
+                "label": {
+                    "en": "size",
+                    "zh_cn": "尺寸"
+                },
+                "isRequired": true,
+                "attributeConstraint": "CombinationUnique",
+                "isSearchable": true,
+                "inputHint": "SingleLine"
+            },
+            {
+                "type": {
+                    "name": "text"
+                },
+                "name": "color",
+                "label": {
+                    "en": "color",
+                    "zh_cn": "颜色"
+                },
+                "isRequired": true,
+                "attributeConstraint": "CombinationUnique",
+                "isSearchable": true,
+                "inputHint": "SingleLine"
+            },
+            {
+                "type": {
+                    "name": "enum",
+                    "values": [{
+                        "key": "enum-key",
+                        "label": "enum-value"
+                    }]
+                },
+                "name": "season-style",
+                "label": {
+                    "en": "season-style",
+                    "zh_cn": "季度款式"
+                },
+                "isRequired": true,
+                "attributeConstraint": "CombinationUnique",
+                "isSearchable": true,
+                "inputHint": "SingleLine"
+            }, {
+                "type": {
+                    "name": "lenum",
+                    "values": [{
+                        "key": "lenum-key",
+                        "label": {
+                            "en": "leunm-label-content"
+                        }
+                    }]
+                },
+                "name": "style",
+                "label": {
+                    "en": "style",
+                    "zh_cn": "款式"
+                },
+                "isRequired": true,
+                "attributeConstraint": "CombinationUnique",
+                "isSearchable": true,
+                "inputHint": "SingleLine"
+            }
+        ]
+    },
+    "invalidProductTypeWithoutName": {
+        "description": "the common attributes for clothes",
+        "attributes": [{
+                "type": {
+                    "name": "number"
+                },
+                "name": "size",
+                "label": {
+                    "en": "size",
+                    "zh_cn": "尺寸"
+                },
+                "isRequired": true,
+                "attributeConstraint": "CombinationUnique",
+                "isSearchable": true,
+                "inputHint": "SingleLine"
+            },
+            {
+                "type": {
+                    "name": "text"
+                },
+                "name": "color",
+                "label": {
+                    "en": "color",
+                    "zh_cn": "颜色"
+                },
+                "isRequired": true,
+                "attributeConstraint": "CombinationUnique",
+                "isSearchable": true,
+                "inputHint": "SingleLine"
+            }
+        ]
+    },
+    "invalidProductTypeWithoutDescription": {
+        "name": "test without parameter",
+        "attributes": [{
+                "type": {
+                    "name": "number"
+                },
+                "name": "size",
+                "label": {
+                    "en": "size",
+                    "zh_cn": "尺寸"
+                },
+                "isRequired": true,
+                "attributeConstraint": "CombinationUnique",
+                "isSearchable": true,
+                "inputHint": "SingleLine"
+            },
+            {
+                "type": {
+                    "name": "text"
+                },
+                "name": "color",
+                "label": {
+                    "en": "color",
+                    "zh_cn": "颜色"
+                },
+                "isRequired": true,
+                "attributeConstraint": "CombinationUnique",
+                "isSearchable": true,
+                "inputHint": "SingleLine"
+            }
+        ]
+    },
+    "validProductTypeWithoutAttributes": {
+        "name": "test without sf fds parameter hi",
+        "description": "test descrip fda tion ok ok ok"
+    },
+    "invalidAttributesName1": {
+        "name": "test without parameter",
+        "description": "test desciprtion",
+        "attributes": [{
+            "type": {
+                "name": "number"
+            },
+            "name": "&$size",
+            "label": {
+                "en": "size",
+                "zh_cn": "尺寸"
+            },
+            "isRequired": true,
+            "attributeConstraint": "CombinationUnique",
+            "isSearchable": true,
+            "inputHint": "SingleLine"
+        }]
+    },
+    "invalidAttributesType": {
+        "name": "test without parameter",
+        "description": "test desciprtion",
+        "attributes": [{
+            "type": {
+                "name": "invalid-type"
+            },
+            "name": "s",
+            "label": {
+                "en": "size",
+                "zh_cn": "尺寸"
+            },
+            "isRequired": true,
+            "attributeConstraint": "CombinationUnique",
+            "isSearchable": true,
+            "inputHint": "SingleLine"
+        }]
+    }
+}
