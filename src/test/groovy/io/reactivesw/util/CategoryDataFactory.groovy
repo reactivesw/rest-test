@@ -62,4 +62,8 @@ class CategoryDataFactory {
     public static def getInvalidUpdateOrderHint() {
         return slurper.parse(new FileReader('src/test/resources/category/InvalidUpdateOrderHint.json'))
     }
+
+    public static def getCategoryForProduct() {
+        return slurper.parse(new FileReader('src/test/resources/category/CategoryForProduct.json'))
+    }
 }

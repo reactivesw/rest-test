@@ -1,0 +1,11 @@
+{
+  "version": 0,
+  "actions": [
+    {
+      "action": "setMetaTitle",
+      "metaTitle":{
+        "en": "set_product_meta_title"
+      }
+    }
+  ]
+}

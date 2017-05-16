@@ -1,0 +1,12 @@
+{
+  "version": 0,
+  "actions": [
+    {
+      "action": "addToCategory",
+      "category": {
+        "typeId": "category",
+        "id": "added_category_id"
+      }
+    }
+  ]
+}

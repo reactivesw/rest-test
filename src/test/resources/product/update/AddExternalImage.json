@@ -1,0 +1,17 @@
+{
+  "version": 0,
+  "actions": [
+    {
+      "action": "addExternalImage",
+      "variantId": 1,
+      "image": {
+        "url": "external_image_url",
+        "label": "external_image_label",
+        "dimensions": {
+          "width": 1200,
+          "height": 1280
+        }
+      }
+    }
+  ]
+}

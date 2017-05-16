@@ -1,0 +1,25 @@
+{
+  "version": 0,
+  "actions": [
+    {
+      "action": "setPrices",
+      "variantId": 1,
+      "prices": [
+        {
+          "value": {
+            "currencyCode": "USD",
+            "centAmount": 12306
+          },
+          "country": "USA"
+        },
+        {
+          "value": {
+            "currencyCode": "RMB",
+            "centAmount": 10010
+          },
+          "country": "CHN"
+        }
+      ]
+    }
+  ]
+}

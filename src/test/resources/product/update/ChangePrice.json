@@ -1,0 +1,17 @@
+{
+  "version": 0,
+  "actions": [
+    {
+      "action": "changePrice",
+      "variantId": 1,
+      "priceId": "",
+      "price": {
+        "value": {
+          "currencyCode": "USD",
+          "centAmount": 12306
+        },
+        "country": "USA"
+      }
+    }
+  ]
+}

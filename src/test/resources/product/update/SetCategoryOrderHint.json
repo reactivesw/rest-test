@@ -1,0 +1,11 @@
+{
+  "version": 0,
+  "actions": [
+    {
+      "action": "setCategoryOrderHint",
+      "categoryId": "",
+      "previousOrderHint": "0",
+      "nextOrderHint": "0.11111111111"
+    }
+  ]
+}

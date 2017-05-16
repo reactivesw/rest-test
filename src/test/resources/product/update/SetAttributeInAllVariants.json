@@ -1,0 +1,10 @@
+{
+  "version": 0,
+  "actions": [
+    {
+      "action": "setAttributeInAllVariants",
+      "name": "attribute4",
+      "value": "update_variant_same_attribute4"
+    }
+  ]
+}

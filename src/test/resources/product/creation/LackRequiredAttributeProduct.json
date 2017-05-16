@@ -1,0 +1,353 @@
+{
+  "name": {
+    "en": "TestProduct"
+  },
+  "productType": {
+    "typeId": "product-type",
+    "id": "Test Product Type"
+  },
+  "slug": "test_product",
+  "description": {
+    "en": "Test Product description"
+  },
+  "categories": [
+    {
+      "typeId": "category",
+      "id": "test category"
+    }
+  ],
+  "masterVariant": {
+    "sku": "master_variant_sku",
+    "key": "master_variant_key",
+    "prices": [
+      {
+        "value": {
+          "currencyCode": "USD",
+          "centAmount": 2000
+        },
+        "country": "US"
+      }
+    ],
+    "images": [
+      {
+        "url": "http://drive.google.com/uc?export=view&id=0B8k8-o55viTIbFJONmQxQkFidFE",
+        "dimensions": {
+          "w": 2300,
+          "h": 2415
+        }
+      }
+    ],
+    "attributes": [
+      {
+        "name": "attribute1",
+        "value": "master_variant_attribute1"
+      },
+      {
+        "name": "attribute2",
+        "value": "master_variant_attribute2"
+      },
+      {
+        "name": "attribute3",
+        "value": "master_variant_attribute3"
+      },
+      {
+        "name": "attribute4",
+        "value": "same_for_all_attribute"
+      },
+      {
+        "name": "attribute5",
+        "value": "master_variant_attribute5"
+      },
+      {
+        "name": "attribute6",
+        "value": "master_variant_attribute6"
+      }
+    ]
+  },
+  "variants": [
+    {
+      "sku": "variant1_sku",
+      "key": "variant1_key",
+      "prices": [
+        {
+          "value": {
+            "currencyCode": "USD",
+            "centAmount": 2000
+          },
+          "country": "US"
+        }
+      ],
+      "images": [
+        {
+          "url": "http://drive.google.com/uc?export=view&id=0B8k8-o55viTIbFJONmQxQkFidFE",
+          "dimensions": {
+            "w": 2300,
+            "h": 2415
+          }
+        }
+      ],
+      "attributes": [
+        {
+          "name": "attribute1",
+          "value": "variant1_attribute1"
+        },
+        {
+          "name": "attribute2",
+          "value": "variant1_attribute2"
+        },
+        {
+          "name": "attribute3",
+          "value": "variant1_attribute3"
+        },
+        {
+          "name": "attribute4",
+          "value": "same_for_all_attribute"
+        },
+        {
+          "name": "attribute5",
+          "value": "variant1_attribute5"
+        },
+        {
+          "name": "attribute6",
+          "value": "variant1_attribute6"
+        }
+      ]
+    },
+    {
+      "sku": "variant2_sku",
+      "key": "variant2_key",
+      "prices": [
+        {
+          "value": {
+            "currencyCode": "USD",
+            "centAmount": 2000
+          },
+          "country": "US"
+        }
+      ],
+      "images": [
+        {
+          "url": "http://drive.google.com/uc?export=view&id=0B8k8-o55viTIbFJONmQxQkFidFE",
+          "dimensions": {
+            "w": 2300,
+            "h": 2415
+          }
+        }
+      ],
+      "attributes": [
+        {
+          "name": "attribute1",
+          "value": "variant2_attribute1"
+        },
+        {
+          "name": "attribute2",
+          "value": "variant2_attribute2"
+        },
+        {
+          "name": "attribute3",
+          "value": "variant2_attribute3"
+        },
+        {
+          "name": "attribute4",
+          "value": "same_for_all_attribute"
+        },
+        {
+          "name": "attribute5",
+          "value": "variant2_attribute5"
+        },
+        {
+          "name": "attribute6",
+          "value": "variant2_attribute6"
+        }
+      ]
+    },
+    {
+      "sku": "variant3_sku",
+      "key": "variant3_key",
+      "prices": [
+        {
+          "value": {
+            "currencyCode": "USD",
+            "centAmount": 2000
+          },
+          "country": "US"
+        }
+      ],
+      "images": [
+        {
+          "url": "http://drive.google.com/uc?export=view&id=0B8k8-o55viTIbFJONmQxQkFidFE",
+          "dimensions": {
+            "w": 2300,
+            "h": 2415
+          }
+        }
+      ],
+      "attributes": [
+        {
+          "name": "attribute1",
+          "value": "variant3_attribute1"
+        },
+        {
+          "name": "attribute2",
+          "value": "variant3_attribute2"
+        },
+        {
+          "name": "attribute3",
+          "value": "variant3_attribute3"
+        },
+        {
+          "name": "attribute4",
+          "value": "same_for_all_attribute"
+        },
+        {
+          "name": "attribute5",
+          "value": "variant3_attribute5"
+        },
+        {
+          "name": "attribute6",
+          "value": "variant3_attribute6"
+        }
+      ]
+    },
+    {
+      "sku": "variant4_sku",
+      "key": "variant4_key",
+      "prices": [
+        {
+          "value": {
+            "currencyCode": "USD",
+            "centAmount": 2000
+          },
+          "country": "US"
+        }
+      ],
+      "images": [
+        {
+          "url": "http://drive.google.com/uc?export=view&id=0B8k8-o55viTIbFJONmQxQkFidFE",
+          "dimensions": {
+            "w": 2300,
+            "h": 2415
+          }
+        }
+      ],
+      "attributes": [
+        {
+          "name": "attribute1",
+          "value": "variant4_attribute1"
+        },
+        {
+          "name": "attribute2",
+          "value": "variant4_attribute2"
+        },
+        {
+          "name": "attribute3",
+          "value": "variant4_attribute3"
+        },
+        {
+          "name": "attribute4",
+          "value": "same_for_all_attribute"
+        },
+        {
+          "name": "attribute5",
+          "value": "variant4_attribute5"
+        },
+        {
+          "name": "attribute6",
+          "value": "variant4_attribute6"
+        }
+      ]
+    },
+    {
+      "sku": "variant5_sku",
+      "key": "variant5_key",
+      "prices": [
+        {
+          "value": {
+            "currencyCode": "USD",
+            "centAmount": 2000
+          },
+          "country": "US"
+        }
+      ],
+      "images": [
+        {
+          "url": "http://drive.google.com/uc?export=view&id=0B8k8-o55viTIbFJONmQxQkFidFE",
+          "dimensions": {
+            "w": 2300,
+            "h": 2415
+          }
+        }
+      ],
+      "attributes": [
+        {
+          "name": "attribute1",
+          "value": "variant5_attribute1"
+        },
+        {
+          "name": "attribute2",
+          "value": "variant5_attribute2"
+        },
+        {
+          "name": "attribute3",
+          "value": "variant5_attribute3"
+        },
+        {
+          "name": "attribute4",
+          "value": "same_for_all_attribute"
+        },
+        {
+          "name": "attribute5",
+          "value": "variant5_attribute5"
+        },
+        {
+          "name": "attribute6",
+          "value": "variant5_attribute6"
+        }
+      ]
+    },
+    {
+      "sku": "variant6_sku",
+      "key": "variant6_key",
+      "prices": [
+        {
+          "value": {
+            "currencyCode": "USD",
+            "centAmount": 2000
+          },
+          "country": "US"
+        }
+      ],
+      "images": [
+        {
+          "url": "http://drive.google.com/uc?export=view&id=0B8k8-o55viTIbFJONmQxQkFidFE",
+          "dimensions": {
+            "w": 2300,
+            "h": 2415
+          }
+        }
+      ],
+      "attributes": [
+        {
+          "name": "attribute1",
+          "value": "variant6_attribute1"
+        },
+        {
+          "name": "attribute2",
+          "value": "variant6_attribute2"
+        },
+        {
+          "name": "attribute3",
+          "value": "variant6_attribute3"
+        },
+        {
+          "name": "attribute4",
+          "value": "same_for_all_attribute"
+        },
+        {
+          "name": "attribute6",
+          "value": "variant6_attribute6"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "version": 0,
+  "actions": [
+    {
+      "action": "removePrice",
+      "variantId": 1,
+      "priceId": ""
+    }
+  ]
+}

@@ -12,5 +12,6 @@ class CleanupUtil {
             def deleteVersion = ['version': value]
             primerEndpoint.delete(query: deleteVersion)
         }
+        cleanupMap.getAllObjects().clear()
     }
 }

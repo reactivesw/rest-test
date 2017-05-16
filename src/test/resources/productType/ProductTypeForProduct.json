@@ -1,0 +1,84 @@
+{
+  "name": "test product type",
+  "description": "the common attributes for test product type",
+  "attributes": [
+    {
+      "type": {
+        "name": "text"
+      },
+      "name": "attribute1",
+      "label": {
+        "en": "attribute1"
+      },
+      "isRequired": true,
+      "attributeConstraint": "CombinationUnique",
+      "isSearchable": true,
+      "inputHint": "SingleLine"
+    },
+    {
+      "type": {
+        "name": "text"
+      },
+      "name": "attribute2",
+      "label": {
+        "en": "attribute2"
+      },
+      "isRequired": true,
+      "attributeConstraint": "CombinationUnique",
+      "isSearchable": true,
+      "inputHint": "SingleLine"
+    },
+    {
+      "type": {
+        "name": "text"
+      },
+      "name": "attribute3",
+      "label": {
+        "en": "attribute3"
+      },
+      "isRequired": true,
+      "attributeConstraint": "Unique",
+      "isSearchable": true,
+      "inputHint": "SingleLine"
+    },
+    {
+      "type": {
+        "name": "text"
+      },
+      "name": "attribute4",
+      "label": {
+        "en": "attribute4"
+      },
+      "isRequired": true,
+      "attributeConstraint": "SameForAll",
+      "isSearchable": true,
+      "inputHint": "SingleLine"
+    },
+    {
+      "type": {
+        "name": "text"
+      },
+      "name": "attribute5",
+      "label": {
+        "en": "attribute5"
+      },
+      "isRequired": true,
+      "attributeConstraint": "None",
+      "isSearchable": true,
+      "inputHint": "SingleLine"
+    },
+    {
+      "type": {
+        "name": "text"
+      },
+      "name": "attribute6",
+      "label": {
+        "en": "attribute6"
+      },
+      "isRequired": false,
+      "attributeConstraint": "None",
+      "isSearchable": true,
+      "inputHint": "SingleLine"
+    }
+  ]
+}

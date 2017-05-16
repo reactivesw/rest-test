@@ -1,0 +1,10 @@
+{
+  "version": 0,
+  "actions": [
+    {
+      "action": "setProductVariantKey",
+      "variantId": 1,
+      "key": "set_variant_key"
+    }
+  ]
+}
