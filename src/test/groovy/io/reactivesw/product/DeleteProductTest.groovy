@@ -50,6 +50,8 @@ class DeleteProductTest extends Specification {
         def version = createdProduct.data.version
         def requestVersion = ['version': version]
 
+        client = RestClientFactory.getClient(ProductConfig.rootURL)
+
         when: "call api to delete product"
         def response = client.delete(path: productId, query: requestVersion)
 
