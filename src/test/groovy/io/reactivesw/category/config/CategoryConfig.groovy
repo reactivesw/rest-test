@@ -8,6 +8,5 @@ import io.reactivesw.config.GlobalConfig
 class CategoryConfig {
     static final String path = "categories"
 
-//    static final String rootURL = GlobalConfig.host + path + "/"
-    static final String rootURL = "http://localhost:8082/"
+    static final String rootURL = GlobalConfig.host + path + "/"
 }

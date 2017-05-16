@@ -7,6 +7,5 @@ import io.reactivesw.config.GlobalConfig
  */
 class ProductTypeConfig {
     static final String PATH = "productType"
-//    static final String ROOTURL = GlobalConfig.host + PATH + "/"
-    static final String ROOTURL = "http://localhost:8089/"
+    static final String ROOTURL = GlobalConfig.host + PATH + "/"
 }
