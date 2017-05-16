@@ -14,6 +14,7 @@ class GetSignInStatusTest extends Specification {
     def "Test1: get sign in status with token, should return customer id and 200 ok"() {
         given: "prepare data"
         def validCustomer = CustomerAuthenticationDataFactory.getSignin().validCustomer
+        def signupResponse = client.post(path: "signup", body: validCustomer, requestContentType: "application/json")
         def res = client.post(path: "signin", body: validCustomer, requestContentType: "application/json")
         def token = ['token': res.data.token]
 
