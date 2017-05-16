@@ -1,0 +1,11 @@
+{
+  "version": 0,
+  "actions": [
+    {
+      "action": "setMetaDescription",
+      "metaDescription":{
+        "en": "set_product_meta_description"
+      }
+    }
+  ]
+}

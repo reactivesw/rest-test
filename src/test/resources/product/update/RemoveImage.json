@@ -1,0 +1,10 @@
+{
+  "version": 0,
+  "actions": [
+    {
+      "action": "removeImage",
+      "variantId": 1,
+      "imageUrl": ""
+    }
+  ]
+}

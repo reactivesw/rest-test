@@ -1,0 +1,9 @@
+{
+  "version": 0,
+  "actions": [
+    {
+      "action": "setKey",
+      "key": "update_product_key"
+    }
+  ]
+}

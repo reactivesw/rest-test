@@ -1,0 +1,11 @@
+{
+  "version": 0,
+  "actions": [
+    {
+      "action": "setAttribute",
+      "variantId": 1,
+      "name": "attribute3",
+      "value": "update_master_variant_attribute3"
+    }
+  ]
+}

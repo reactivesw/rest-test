@@ -32,8 +32,8 @@
       {
         "url": "http://drive.google.com/uc?export=view&id=0B8k8-o55viTIbFJONmQxQkFidFE",
         "dimensions": {
-          "w": 2300,
-          "h": 2415
+          "width": 2300,
+          "height": 2415
         }
       }
     ],
@@ -52,7 +52,7 @@
       },
       {
         "name": "attribute4",
-        "value": "master_variant_attribute4"
+        "value": "same_for_all_attribute"
       },
       {
         "name": "attribute5",
@@ -81,8 +81,8 @@
         {
           "url": "http://drive.google.com/uc?export=view&id=0B8k8-o55viTIbFJONmQxQkFidFE",
           "dimensions": {
-            "w": 2300,
-            "h": 2415
+            "width": 2300,
+            "height": 2415
           }
         }
       ],
@@ -101,7 +101,7 @@
         },
         {
           "name": "attribute4",
-          "value": "variant1_attribute4"
+          "value": "same_for_all_attribute"
         },
         {
           "name": "attribute5",
@@ -129,8 +129,8 @@
         {
           "url": "http://drive.google.com/uc?export=view&id=0B8k8-o55viTIbFJONmQxQkFidFE",
           "dimensions": {
-            "w": 2300,
-            "h": 2415
+            "width": 2300,
+            "height": 2415
           }
         }
       ],
@@ -149,7 +149,7 @@
         },
         {
           "name": "attribute4",
-          "value": "variant2_attribute4"
+          "value": "same_for_all_attribute"
         },
         {
           "name": "attribute5",
@@ -177,8 +177,8 @@
         {
           "url": "http://drive.google.com/uc?export=view&id=0B8k8-o55viTIbFJONmQxQkFidFE",
           "dimensions": {
-            "w": 2300,
-            "h": 2415
+            "width": 2300,
+            "height": 2415
           }
         }
       ],
@@ -197,7 +197,7 @@
         },
         {
           "name": "attribute4",
-          "value": "variant3_attribute4"
+          "value": "same_for_all_attribute"
         },
         {
           "name": "attribute5",
@@ -225,8 +225,8 @@
         {
           "url": "http://drive.google.com/uc?export=view&id=0B8k8-o55viTIbFJONmQxQkFidFE",
           "dimensions": {
-            "w": 2300,
-            "h": 2415
+            "width": 2300,
+            "height": 2415
           }
         }
       ],
@@ -245,7 +245,7 @@
         },
         {
           "name": "attribute4",
-          "value": "variant4_attribute4"
+          "value": "same_for_all_attribute"
         },
         {
           "name": "attribute5",
@@ -273,8 +273,8 @@
         {
           "url": "http://drive.google.com/uc?export=view&id=0B8k8-o55viTIbFJONmQxQkFidFE",
           "dimensions": {
-            "w": 2300,
-            "h": 2415
+            "width": 2300,
+            "height": 2415
           }
         }
       ],
@@ -293,7 +293,7 @@
         },
         {
           "name": "attribute4",
-          "value": "variant5_attribute4"
+          "value": "same_for_all_attribute"
         },
         {
           "name": "attribute5",
@@ -321,8 +321,8 @@
         {
           "url": "http://drive.google.com/uc?export=view&id=0B8k8-o55viTIbFJONmQxQkFidFE",
           "dimensions": {
-            "w": 2300,
-            "h": 2415
+            "width": 2300,
+            "height": 2415
           }
         }
       ],
@@ -341,7 +341,7 @@
         },
         {
           "name": "attribute4",
-          "value": "variant6_attribute4"
+          "value": "same_for_all_attribute"
         },
         {
           "name": "attribute5",

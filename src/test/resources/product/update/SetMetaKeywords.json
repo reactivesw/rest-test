@@ -1,0 +1,11 @@
+{
+  "version": 0,
+  "actions": [
+    {
+      "action": "setMetaKeywords",
+      "metaKeywords":{
+        "en": "set_product_meta_keywords"
+      }
+    }
+  ]
+}

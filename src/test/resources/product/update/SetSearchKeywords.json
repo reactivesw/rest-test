@@ -1,0 +1,11 @@
+{
+  "version": 0,
+  "actions": [
+    {
+      "action": "setSearchKeywords",
+      "searchKeywords":{
+        "text": "set_product_search_keyword"
+      }
+    }
+  ]
+}

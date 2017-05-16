@@ -1,0 +1,54 @@
+{
+  "version": 0,
+  "actions": [
+    {
+      "action": "addVariant",
+      "sku": "add_variant_sku",
+      "key": "add_variant_key",
+      "prices": [
+        {
+          "value": {
+            "currencyCode": "USD",
+            "centAmount": 2000
+          },
+          "country": "US"
+        }
+      ],
+      "images": [
+        {
+          "url": "http://drive.google.com/uc?export=view&id=0B8k8-o55viTIbFJONmQxQkFidFE",
+          "dimensions": {
+            "width": 2300,
+            "height": 2415
+          }
+        }
+      ],
+      "attributes": [
+        {
+          "name": "attribute1",
+          "value": "add_variant_attribute1"
+        },
+        {
+          "name": "attribute2",
+          "value": "add_variant_attribute2"
+        },
+        {
+          "name": "attribute3",
+          "value": "add_variant_attribute3"
+        },
+        {
+          "name": "attribute4",
+          "value": "same_for_all_attribute"
+        },
+        {
+          "name": "attribute5",
+          "value": "add_variant_attribute5"
+        },
+        {
+          "name": "attribute6",
+          "value": "add_variant_attribute6"
+        }
+      ]
+    }
+  ]
+}

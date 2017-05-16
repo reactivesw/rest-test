@@ -1,0 +1,9 @@
+{
+  "version": 0,
+  "actions": [
+    {
+      "action": "removeVariant",
+      "variantId": 3
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "basicProduct": {
+    "name": {
+      "en": "TestProduct"
+    },
+    "productType": {
+      "typeId": "product-type",
+      "id": "Test Product Type"
+    },
+    "slug": "basic_exist_slug_product",
+    "description": {
+      "en": "Test Product description"
+    },
+    "categories": [
+      {
+        "typeId": "category",
+        "id": "test category"
+      }
+    ],
+    "masterVariant": {
+      "sku": "basic_exist_slug_product_master_variant_sku",
+      "key": "basic_exist_slug_product_master_variant_key",
+      "prices": [
+        {
+          "value": {
+            "currencyCode": "USD",
+            "centAmount": 2000
+          },
+          "country": "US"
+        }
+      ],
+      "images": [
+        {
+          "url": "http://drive.google.com/uc?export=view&id=0B8k8-o55viTIbFJONmQxQkFidFE",
+          "dimensions": {
+            "w": 2300,
+            "h": 2415
+          }
+        }
+      ],
+      "attributes": [
+        {
+          "name": "attribute1",
+          "value": "master_variant_attribute1"
+        },
+        {
+          "name": "attribute2",
+          "value": "master_variant_attribute2"
+        },
+        {
+          "name": "attribute3",
+          "value": "master_variant_attribute3"
+        },
+        {
+          "name": "attribute4",
+          "value": "same_for_all_attribute"
+        },
+        {
+          "name": "attribute5",
+          "value": "master_variant_attribute5"
+        },
+        {
+          "name": "attribute6",
+          "value": "master_variant_attribute6"
+        }
+      ]
+    }
+  },
+  "existSlugProduct": {
+    "name": {
+      "en": "TestProduct"
+    },
+    "productType": {
+      "typeId": "product-type",
+      "id": "Test Product Type"
+    },
+    "slug": "basic_exist_slug_product",
+    "description": {
+      "en": "Test Product description"
+    },
+    "categories": [
+      {
+        "typeId": "category",
+        "id": "test category"
+      }
+    ],
+    "masterVariant": {
+      "sku": "exist_slug_product_master_variant_sku",
+      "key": "exist_slug_product_master_variant_key",
+      "prices": [
+        {
+          "value": {
+            "currencyCode": "USD",
+            "centAmount": 2000
+          },
+          "country": "US"
+        }
+      ],
+      "images": [
+        {
+          "url": "http://drive.google.com/uc?export=view&id=0B8k8-o55viTIbFJONmQxQkFidFE",
+          "dimensions": {
+            "w": 2300,
+            "h": 2415
+          }
+        }
+      ],
+      "attributes": [
+        {
+          "name": "attribute1",
+          "value": "master_variant_attribute1"
+        },
+        {
+          "name": "attribute2",
+          "value": "master_variant_attribute2"
+        },
+        {
+          "name": "attribute3",
+          "value": "master_variant_attribute3"
+        },
+        {
+          "name": "attribute4",
+          "value": "same_for_all_attribute"
+        },
+        {
+          "name": "attribute5",
+          "value": "master_variant_attribute5"
+        },
+        {
+          "name": "attribute6",
+          "value": "master_variant_attribute6"
+        }
+      ]
+    }
+  }
+}
