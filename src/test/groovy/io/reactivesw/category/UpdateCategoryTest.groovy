@@ -229,7 +229,7 @@ class UpdateCategoryTest extends Specification {
 
         then: "should return 409 conflict"
         response == 409
-
+    }
     def "Test15: update order hint, should return 200 ok and category view"() {
         given: "prepare data"
         def setOrderHint = CategoryDataFactory.getSetOrderHint()
