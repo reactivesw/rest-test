@@ -30,12 +30,13 @@ class SignUpTest extends Specification {
     def "Test2: sign up with the same email again, should return 409 conflict"() {
         given: "prepare data"
         def duplicateSignUp = CustomerAuthenticationDataFactory.getSignup().duplicateSignUp
+        def firstResponse = client.post(path: "signup", body: duplicateSignUp, requestContentType: "application/json")
 
         when: "call signup api to signup"
-        def response = client.post(path: "signup", body: duplicateSignUp, requestContentType: "application/json")
+        def secondResponse = client.post(path: "signup", body: duplicateSignUp, requestContentType: "application/json")
 
         then: "should return 409 conflict"
-        response == 409
+        secondResponse == 409
     }
 
     def "Test3: sign up with password which is not digit, should return 400 bad request"() {
